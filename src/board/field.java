@@ -1,14 +1,14 @@
 package board;
+import spil.Player;
 
-public class field {
+public abstract class field {
 
 	private String name;
-	private int price;
+	public abstract void landOnField(Player player);
 
-	public field(String name, int price) {
+	public field(String name) {
 
 		this.name = name;
-		this.price = price;
 
 	}
 
