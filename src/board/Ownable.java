@@ -1,14 +1,24 @@
 package board;
+
 import spil.Player;
 
-public class Ownable {
+public class Ownable extends Field {
 
-private int price;
-private Player owner;
-public int getRent(){
-	return price;
-}
+	public Ownable(String name) {
+		super(name);
 
+	}
 
-	
+	private int price;
+	private Player owner;
+
+	public int getRent() {
+		return price;
+	}
+
+	@Override
+	public void landOnField(Player player) {
+
+	}
+
 }

@@ -1,9 +1,12 @@
 package board;
 
-public class Territory {
+public class Territory extends Ownable {
 
-private int rent;
-	
+	public Territory(String name) {
+		super(name);
+
+	}
+
+	private int rent;
+
 }
-
-

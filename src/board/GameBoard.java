@@ -2,41 +2,41 @@ package board;
 
 public class GameBoard {
 
-	private field[] fields;
-	private int totalFields;
+	private Field[] Fields;
+	private int totalFields = 21;
 	private int i;
 
 	public GameBoard() {
 
-		field[] fields = new field[21];
+		Field[] Fields = new Field[totalFields];
 
-		fields[0] = new field("Tribe Encampment", 1000);
-		fields[1] = new field("Crater", 1500);
-		fields[2] = new field("Mountain", 2000);
-		fields[3] = new field("Coldt Desert", 3000);
-		fields[4] = new field("Black cave", 4000);
-		fields[5] = new field("The Werewall", 4300);
-		fields[6] = new field("Mountain village", 4750);
-		fields[7] = new field("South Citadell", 5000);
-		fields[8] = new field("Palace Gates", 5500);
-		fields[9] = new field("Tower", 6000);
-		fields[10] = new field("Castle", 8000);
-		fields[11] = new field("Walled City", 5000);
-		fields[12] = new field("Monastery", 500);
-		fields[13] = new field("Huts in the mountain", 2500);
-		fields[14] = new field("The pit", 2500);
-		fields[15] = new field("Goldmine", 000);
-		fields[16] = new field("Caravan", 4000);
-		fields[17] = new field("Second Sail", 4000);
-		fields[18] = new field("Sea Grover", 4000);
-		fields[19] = new field("The buccaneers", 4000);
-		fields[20] = new field("Privateer Armade", 4000);
+		Fields[0] = new Territory("Tribe Encampment");
+		Fields[1] = new Territory("Crater");
+		Fields[2] = new Territory("Mountain");
+		Fields[3] = new Territory("Coldt Desert");
+		Fields[4] = new Territory("Black cave");
+		Fields[5] = new Territory("The Werewall");
+		Fields[6] = new Territory("Mountain village");
+		Fields[7] = new Territory("South Citadell");
+		Fields[8] = new Territory("Palace Gates");
+		Fields[9] = new Territory("Tower");
+		Fields[10] = new Territory("Castle");
+		Fields[11] = new Refuge("Walled City");
+		Fields[12] = new Refuge("Monastery");
+		Fields[13] = new LaborCamp("Huts in the mountain");
+		Fields[14] = new LaborCamp("The pit");
+		Fields[15] = new Tax("Goldmine");
+		Fields[16] = new Tax("Caravan");
+		Fields[17] = new Fleet("Second Sail");
+		Fields[18] = new Fleet("Sea Grover");
+		Fields[19] = new Fleet("The buccaneers");
+		Fields[20] = new Fleet("Privateer Armade");
 
 	}
 
 	public String toString() {
 
-		return super.toString() + fields[i];
+		return super.toString() + Fields[i];
 
 	}
 
