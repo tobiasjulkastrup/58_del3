@@ -2,8 +2,9 @@ package spil;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
+import boundaryToMatador.GUI;
 
-public class Lang {
+public class ICO { //Interface Controller Object
 	
 	public static ResourceBundle messages;
 	
@@ -12,5 +13,9 @@ public class Lang {
 		messages = ResourceBundle.getBundle("MessagesBundle", currentLocale);
 	}
 	
+	public void setGUI() {
+		GUI.create("fieldsForGUI.txt");
+		System.out.println("GUI will start in 3.. 2.. 1..");
+	}
 
 }

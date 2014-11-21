@@ -2,263 +2,173 @@
 	backgroundColor::255,,0,,0;;
 	foregroundColor::0,,0,,0;;
 	title::START;; 
-	subText::Modtag: 200;; 
-	description::Modtag kr. 200,-\nnår de passerer start;;
+	subText:: ;; 
+	description::START;;
 ||		
 	type::Street;;
+	backgroundColor::173,,69,,199;;
+	foregroundColor::0,,0,,0;;
+	title::Tribe Encampment;; 
+	subText::-100 point;; 
+	description::Tribe Encampment;;
+	leje::Leje: -100;;
+||		
+	type::Street;;
+	backgroundColor::173,,69,,199;;
+	foregroundColor::0,,0,,0;;
+	title::Crater;; 
+	subText::-300 point;; 
+	description::Crater;;
+	leje::Leje: -300;;
+||
+	type::Street;;
+	backgroundColor::15,,85,,21;;
+	foregroundColor::0,,0,,0;;
+	title::Mountain;;
+	subText::-500 point;;  
+	description::Mountain;;
+	leje::Leje: -500;;
+||
+	type::Street;;
+	backgroundColor::85,,64,,15;;
+	foregroundColor::0,,0,,0;;
+	title::Coldt Desert;; 
+	subText::-700 point;; 
+	description::Coldt Desert;;
+	leje::Leje: -700;;
+||
+	type::Street;;
+	backgroundColor::184,,160,,103;;
+	foregroundColor::0,,0,,0;;
+	title::Black cave;;
+	subText::-1000 point;; 
+	description::Black cave;;
+	leje::Leje: -1000;;
+||
+	type::Street;;
 	backgroundColor::75,,155,,225;;
 	foregroundColor::0,,0,,0;;
-	title::Rødovrevej;; 
-	subText::Pris:	60;; 
-	description::Rødovrevej;;
-	leje::Leje: 20;;
-||	
-	type::Chance;;
-||	
+	title::The Werewall;;
+	subText::-1300 point;; 
+	description::The Werewall;;
+	leje::Leje: -1300;;
+||
 	type::Street;;
-	backgroundColor::75,,155,,225;;
+	backgroundColor::151,,141,,121;;
 	foregroundColor::0,,0,,0;;
-	title::Hvidovrevej;; 
-	subText::Pris:	60;; 
-	description::Hvidovrevej;;
-	leje::Leje: 20;;
-||	
-	type::Tax;;
-	title::Betal\nindkomst-\nskat;; 
-	subText::10% el. 200;; 
-	description::Betal indkomstskat\n10% eller kr. 200,-;;
-||	
-	type::Shipping;;
-	picture::Default;;
-	title::Øresund;; 
-	subText::Pris:  200;; 
-	description::Øresundsredderiet;;
-	leje::Leje: 75;;
-||	
+	title::Mountain village;; 
+	subText:: -1600;; 
+	description::Mountain village;;
+	leje::Leje: -1600;;
+||
 	type::Street;;
-	backgroundColor::255,,135,,120;;
-	foregroundColor::0,,0,,0;;
-	title::Roskildevej;; 
-	subText::Pris:	100;; 
-	description::Roskildevej;;
-	leje::Leje: 40;;
-||	
-	type::Chance;;
-||	
-	type::Street;;
-	backgroundColor::255,,135,,120;;
-	foregroundColor::0,,0,,0;;
-	title::Valby \nLanggade;; 
-	subText::Pris:	100;; 
-	description::Valby Langgade;;
-	leje::Leje: 40;;
-||	
-	type::Street;;
-	backgroundColor::255,,135,,120;;
-	foregroundColor::0,,0,,0;;
-	title::Allégade;; 
-	subText::Pris:	120;; 
-	description::Allégade;;
-	leje::Leje: 45;;
-||	
-	type::Jail;;
-	picture::Default;;
-	title::Fængsel;; 
-	subText::Fængsel;; 
-	description::På besøg i fængslet;;
-||	
-	type::Street;;
-	backgroundColor::102,,204,,0;;
-	foregroundColor::0,,0,,0;;
-	title::Frederiks-\nberg Allé;; 
-	subText::Pris:	140;; 
-	description::Frederiksberg Allé;;
-	leje::Leje: 50;;
-||	
-	type::Brewery;;
-	picture::Default;;
-	title::Tuborg;; 
-	subText::Pris:  150;; 
-	description::Tuborg bryggeri;;
-	leje::Leje: 10 x [Terningslag];;
-||	
-	type::Street;;
-	backgroundColor::102,,204,,0;;
-	foregroundColor::0,,0,,0;;
-	title::Bülowsvej;; 
-	subText::Pris:	140;; 
-	description::Bülowsvej;;
-	leje::Leje: 50;;
-||	
-	type::Street;;
-	backgroundColor::102,,204,,0;;
-	foregroundColor::0,,0,,0;;
-	title::Gammel\nKongevej;; 
-	subText::Pris:	140;; 
-	description::Gammel Kongevej;;
-	leje::Leje: 50;;
-||	
-	type::Shipping;;
-	picture::Default;;
-	title::D.F.D.S.;; 
-	subText::Pris:  200;; 
-	description::D.F.D.S. redderiet;;
-	leje::Leje: 75;;
-||	
-	type::Street;;
-	backgroundColor::153,,153,,153;;
-	foregroundColor::0,,0,,0;;
-	title::Bernstorffs-\nvej;; 
-	subText::Pris:	180;; 
-	description::Bernstorffsvej;;
-	leje::Leje: 60;;
-||	
-	type::Chance;;
-||	
-	type::Street;;
-	backgroundColor::153,,153,,153;;
-	foregroundColor::0,,0,,0;;
-	title::Hellerupvej;; 
-	subText::Pris:	180;; 
-	description::Hellerupvej;;
-	leje::Leje: 60;;
-||	
-	type::Street;;
-	backgroundColor::153,,153,,153;;
-	foregroundColor::0,,0,,0;;
-	title::Strandvejen;; 
-	subText::Pris:	180;; 
-	description::Strandvejen;;
-	leje::Leje: 60;;
-||	
-	type::Refuge;;
-	picture::Default;;
-	title::Helle;; 
-	subText::Helle;; 
-	description::Ta' en pause;;
-||	
-	type::Street;;
-	backgroundColor::255,,0,,0;;
-	foregroundColor::0,,0,,0;;
-	title::Trianglen;; 
-	subText::Pris:	220;; 
-	description::Trianglen;;
-	leje::Leje: 70;;
-||	
-	type::Chance;;
-||	
-	type::Street;;
-	backgroundColor::255,,0,,0;;
-	foregroundColor::0,,0,,0;;
-	title::Østerbro-\ngade;; 
-	subText::Pris:	220;; 
-	description::Østerbrogade;;
-	leje::Leje: 70;;
-||	
-	type::Street;;
-	backgroundColor::255,,0,,0;;
-	foregroundColor::0,,0,,0;;
-	title::Grønningen;; 
-	subText::Pris:	240;; 
-	description::Grønningen;;
-	leje::Leje: 80;;
-||	
-	type::Shipping;;
-	picture::Default;;
-	title::Ø.S.;; 
-	subText::Pris:  200;; 
-	description::Ø.S. redderiet;;
-	leje::Leje: 75;;
-||	
-	type::Street;;
-	backgroundColor::255,,255,,255;;
-	foregroundColor::0,,0,,0;;
-	title::Bredgade;; 
-	subText::Pris:	260;; 
-	description::Bredgade;;
-	leje::Leje: 80;;
-||	
-	type::Street;;
-	backgroundColor::255,,255,,255;;
-	foregroundColor::0,,0,,0;;
-	title::Kgs. Nytorv;; 
-	subText::Pris:	260;; 
-	description::Kongens Nytorv;;
-	leje::Leje: 80;;
-||	
-	type::Brewery;;
-	picture::Default;;
-	title::Carlsberg;; 
-	subText::Pris:  150;; 
-	description::Carlsberg bryggeri;;
-	leje::Leje: 10 x [Terningslag];;
-||	
-	type::Street;;
-	backgroundColor::255,,255,,255;;
-	foregroundColor::0,,0,,0;;
-	title::Østergade;; 
-	subText::Pris:	280;; 
-	description::Østergade;;
-	leje::Leje: 85;;
-||	
-	type::Jail;;
-	picture::Default;;
-	title::Gå i fængsel;; 
-	subText::Gå i fængsel;; 
-	description::De fængsles\nSlå to ens for at komme ud;;
-||	
-	type::Street;;
-	backgroundColor::255,,255,,50;;
-	foregroundColor::0,,0,,0;;
-	title::Amagertorv;; 
-	subText::Pris:	300;; 
-	description::Amagertorv;;
-	leje::Leje: 95;;
-||	
-	type::Street;;
-	backgroundColor::255,,255,,50;;
-	foregroundColor::0,,0,,0;;
-	title::Vimmel-\nskaftet;; 
-	subText::Pris:	300;; 
-	description::Vimmelskaftet;;
-	leje::Leje: 95;;
-||	
-	type::Chance;;
-||	
-	type::Street;;
-	backgroundColor::255,,255,,50;;
-	foregroundColor::0,,0,,0;;
-	title::Nygade;; 
-	subText::Pris:	320;; 
-	description::Nygade;;
-	leje::Leje: 100;;
-||	
-	type::Shipping;;
-	picture::Default;;
-	title::Bornholm;; 
-	subText::Pris:  200;; 
-	description::Bornholms redderi;;
-	leje::Leje: 75;;
-||	
-	type::Chance;;
-||	
-	type::Street;;
-	backgroundColor::150,,60,,150;;
+	backgroundColor::0,,0,,0;;
 	foregroundColor::255,,255,,255;;
-	title::Frederiks-\nberggade;; 
-	subText::Pris:	350;; 
-	description::Frederiksberggade;;
-	leje::Leje: 120;;
-||	
-	type::Tax;;
-	title::Ekstra-\nordinær\nstatsskat;; 
-	subText::Betal 100;;
-	description::Betal ekstraordinær\n statsskat: kr. 100,-;;
-||	
+	title::South Citadell;;
+	subText::-2000 point;; 
+	description::South Citadell;;
+	leje::Leje: -2000;;
+||
 	type::Street;;
-	backgroundColor::150,,60,,150;;
+	backgroundColor::196,,196,,196;;
+	foregroundColor::0,,0,,0;;
+	title::Palace Gates;;
+	subText::-2600 point;;  
+	description::Palace Gates;;
+	leje::Leje: -2600;;
+||
+	type::Street;;
+	backgroundColor::90,,90,,90;;
+	foregroundColor::0,,0,,0;;
+	title::Tower;; 
+	subText::-3200 point;; 
+	description::Tower;;
+	leje::Leje: -3200;;
+||
+	type::Street;;
+	backgroundColor::33,,18,,204;;
 	foregroundColor::255,,255,,255;;
-	title::Rådhus-\npladsen;; 
-	subText::Pris:	400;; 
-	description::Rådhuspladsen;;
-	leje::Leje: 150;;
+	title::Castle;; 
+	subText::-4000 point;; 
+	description::Castle;;
+	leje::Leje: -4000;;
+||
+	type::Street;;
+	backgroundColor::197,,142,,47;;
+	foregroundColor::0,,0,,0;;
+	title::Walled City;; 
+	subText::+5000 point;; 
+	description::Walled City;;
+	leje::Leje: +5000;;
+||
+	type::Street;;
+	backgroundColor::197,,142,,47;;
+	foregroundColor::0,,0,,0;;
+	title::Monastery;; 
+	subText::+500 point;; 
+	description::Monastery;;
+	leje::Leje: +500;;
+||
+	type::Street;;
+	backgroundColor::197,,142,,47;;
+	foregroundColor::0,,0,,0;;
+	title::Huts in the mountain;; 
+	subText::-100 x dice;; 
+	description::Huts in the mountain;;
+	leje::Leje: -100 x dice;;
+||
+	type::Street;;
+	backgroundColor::197,,142,,47;;
+	foregroundColor::0,,0,,0;;
+	title::The pit;; 
+	subText::-100 x dice;; 
+	description::The pit;;
+	leje::Leje: -100 x dice;;
+||
+	type::Street;;
+	backgroundColor::197,,142,,47;;
+	foregroundColor::0,,0,,0;;
+	title::Goldmine;; 
+	subText::-2000 point;; 
+	description::Goldmine;;
+	leje::Leje: -2000;;
+||
+	type::Street;;
+	backgroundColor::197,,142,,47;;
+	foregroundColor::0,,0,,0;;
+	title::Caravan;; 
+	subText::-4000 or 10% of all assets;; 
+	description::Caravan;;
+	leje::Leje: -4000 or 10% of all assets;;
+||
+	type::Street;;
+	backgroundColor::197,,142,,47;;
+	foregroundColor::0,,0,,0;;
+	title::Second Sail;; 
+	subText::500-4000 point;; 
+	description::Second Sail;;
+	leje::Betal: 500-4000;;
+||
+	type::Street;;
+	backgroundColor::197,,142,,47;;
+	foregroundColor::0,,0,,0;;
+	title::Sea Grover;; 
+	subText::500-4000 point;; 
+	description::Sea Grover;;
+	leje::Leje: +650;;
+||
+	type::Street;;
+	backgroundColor::197,,142,,47;;
+	foregroundColor::0,,0,,0;;
+	title::The buccaneers;; 
+	subText::500-4000 point;; 
+	description::The buccaneers;;
+	leje::Betal: 500-4000;;
+||
+	type::Street;;
+	backgroundColor::197,,142,,47;;
+	foregroundColor::0,,0,,0;;
+	title::Privateer Armade;; 
+	subText::500-4000 point;; 
+	description::Privateer Armade;;
+	leje::Betal: 500-4000;;
