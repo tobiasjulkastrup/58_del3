@@ -9,10 +9,8 @@ public class Player {
 	
 	public String newPlayer (String name) {
 		String[] PlayerName = new String[totalPlayers];	
-		for (int i=0; i<=totalPlayers; i++){
-			System.out.println("spiller"+(i+1)+" indtast navn");
-			
-			PlayerName[i]=input.nextLine();
+		for (int i=0; i<=totalPlayers; i++){		
+			PlayerName[i]=name;
 			}		
 			return PlayerName.toString(); //returnerer string
 	}
