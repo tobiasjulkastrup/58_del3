@@ -4,15 +4,18 @@ public class Player {
 
 	int totalPlayers;
 	
-	public void totalPlayers(int numberOfPlayers){
+	public String totalPlayers(int numberOfPlayers){
 		totalPlayers = numberOfPlayers;
+		String[] PlayerName = new String[totalPlayers];	
+		return PlayerName.toString(); //returnerer string
+	
 	}
 	
-	public String newPlayer (String name) {
-		String[] PlayerName = new String[totalPlayers];	
-		for (int i=0; i<=totalPlayers; i++){		
-			PlayerName[i] = name;
-			}		
-			return PlayerName.toString(); //returnerer string
+	public String newPlayer (String name,int playerNumber) {
+		
+		
+			PlayerName[playerNumber] = name;
+				
+		
 	}
 }
