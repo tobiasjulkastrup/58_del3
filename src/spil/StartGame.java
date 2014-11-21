@@ -12,14 +12,14 @@ public class StartGame {
 
 	private void go() {
 		
+		// Opretter et iCO() opjekt og sætter sproget, sådan at beskeder kan hentes med:
+		// iCO.messages.getString("nøgleord")
+		ICO iCO = new ICO();
+		iCO.setLang("da", "DK");
+		
 		GameController gameController = new GameController();
 		gameController.newGame();
 		
-		//DiceCup test
-//		DiceCup diceCup = new DiceCup();
-//		int[] dice;
-//		dice = diceCup.getDiceCup(2, 6);
-//		System.out.println(""+dice[0]+" "+dice[1]);
 
 	}
 		

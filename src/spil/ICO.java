@@ -8,14 +8,14 @@ public class ICO { //Interface Controller Object
 	
 	public static ResourceBundle messages;
 	
-	public void setLang(){
-		Locale currentLocale = new Locale("da", "DK");
+	public void setLang(String lang, String region){
+		Locale currentLocale = new Locale(lang, region);
 		messages = ResourceBundle.getBundle("MessagesBundle", currentLocale);
 	}
 	
 	public void setGUI() {
-		GUI.create("fieldsForGUI.txt");
-		System.out.println("GUI will start in 3.. 2.. 1..");
+		GUI.create(messages.getString("fieldsForGUI")); //"fieldsForGUI.txt";
+		System.out.println(messages.getString("startMessageTUI")); //"GUI will start in 3.. 2.. 1.."
 	}
 
 }

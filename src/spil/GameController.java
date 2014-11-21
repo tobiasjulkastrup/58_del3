@@ -8,21 +8,17 @@ public class GameController {
 		
 		int numbersOfPlayers;
 		
-		//Opretter en GUI med field info fra fieldsForGUI.txt
+		// Opretter en GUI med field info fra fieldsForGUI.txt
 		ICO iCO = new ICO();
 		iCO.setGUI();
-		
-		// Opretter et Lang() opjekt og sætter sproget, sådan at beskeder kan hentes med:
-		// Lang.messages.getString("nøgleord")
-		iCO.setLang();
 	
-		GUI.showMessage("Welcome. Press ok to start the game.");
-		numbersOfPlayers = GUI.getUserInteger("Hvor mange vil i spille?");
+		GUI.showMessage(ICO.messages.getString("firstMessageGUI")); // "Welcome. Press ok to start the game."
+		numbersOfPlayers = GUI.getUserInteger(ICO.messages.getString("numbersOfPlayersGUI")); // "How many players will play the game?"
 		
 		// Add players to the game and on the board
 		Player player = new Player();
 		for (int i = 0; i < numbersOfPlayers; i++) {
-			player.newPlayer(GUI.getUserString("Hvad er dit navn, Player "+(i+1)));
+			player.newPlayer(GUI.getUserString(ICO.messages.getString("inputNameGUI")+(i+1)+"?")); //"What is your name, Player 
 		}
 	}
 }
