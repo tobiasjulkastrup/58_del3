@@ -7,21 +7,16 @@ import java.text.NumberFormat;
 public class Account {
 	private NumberFormat fmt = NumberFormat.getCurrencyInstance();
 	private int balance;
-	private long acctNumber;
 	
 	
-	public Account(int initial, Long account){
-		
-		acctNumber = account;
+	public void setAccount(int initial){
 		balance = initial; 
 	}
 	
 
  public int deposit (int price)
 {
-
 	balance = balance + price;
-
 	return balance;
 }
 
@@ -48,19 +43,11 @@ public class Account {
 }
 
 //-----------------------------------------------------------------
-//  Returns the account number.
-//-----------------------------------------------------------------
-public long getAccountNumber ()
-{
-	return acctNumber;
-}
-
-//-----------------------------------------------------------------
 //  Returns a one-line description of the account as a string.
 //-----------------------------------------------------------------
 public String toString ()
 {
-	return (acctNumber + "\t"+ fmt.format(balance));
+	return (fmt.format(balance));
 }
 }
 

@@ -18,4 +18,7 @@ public class ICO { //Interface Controller Object
 		System.out.println(messages.getString("startMessageTUI")); //"GUI will start in 3.. 2.. 1.."
 	}
 
+	public void setNewPlayerGUI(String name, int balance) {
+		GUI.addPlayer(name, balance);
+	}
 }

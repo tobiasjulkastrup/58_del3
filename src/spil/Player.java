@@ -2,20 +2,28 @@ package spil;
 
 public class Player {
 
-	int totalPlayers;
+	private String playerName;
+	private Account account;
 	
-	public String totalPlayers(int numberOfPlayers){
-		totalPlayers = numberOfPlayers;
-		String[] PlayerName = new String[totalPlayers];	
-		return PlayerName.toString(); //returnerer string
-	
+	public void setPlayer (String name, int startSaldo) {
+		playerName = name;
+		account = new Account();
+		account.setAccount(startSaldo);
 	}
 	
-	public String newPlayer (String name,int playerNumber) {
-		
-		
-			PlayerName[playerNumber] = name;
-				
-		
+	public String getName() {
+		return playerName;
+	}
+	
+	public int getBalance(){
+		return account.getBalance();
+	}
+	
+	public int withdraw(int price){
+		return account.withdraw(price);
+	}
+	
+	public int deposit(int price){
+		return account.deposit(price);
 	}
 }
