@@ -6,7 +6,7 @@ public class GameController {
 
 	public void newGame() {
 		
-		int numbersOfPlayers;
+		int numberOfPlayers;
 		
 		// Opretter en GUI med field info fra fieldsForGUI.txt
 		ICO iCO = new ICO();
