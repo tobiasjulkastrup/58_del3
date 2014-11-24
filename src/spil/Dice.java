@@ -8,5 +8,4 @@ public class Dice {
 		int dice = (int) ((Math.random() * (eyes)) + 1);     // 0-1
 		return dice;				
 	}
-
 }

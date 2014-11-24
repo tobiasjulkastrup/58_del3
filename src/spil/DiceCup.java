@@ -8,6 +8,7 @@ public class DiceCup {
 		int[] diceArray = new int[rolls];
 		
 		Dice dice = new Dice();
+		
 		for (int i = 0; i < rolls; i++) {
 			diceArray[i] = dice.getDice(eyes);
 		}

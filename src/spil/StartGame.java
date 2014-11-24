@@ -19,8 +19,5 @@ public class StartGame {
 		
 		GameController gameController = new GameController();
 		gameController.newGame();
-		
-
 	}
-		
 }

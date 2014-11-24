@@ -1,17 +1,21 @@
 package spil;
 
+import java.awt.Color;
+
 public class Player {
 
 	private String playerName;
 	private Account account;
+	private Color playerColor;
 	
-	public void setPlayer (String name, int startSaldo) {
+	public void setPlayer (String name, int startSaldo, Color playerColorFromGUI){
 		playerName = name;
+		playerColor = playerColorFromGUI;
 		account = new Account();
 		account.setAccount(startSaldo);
 	}
 	
-	public String getName() {
+	public String getName(){
 		return playerName;
 	}
 	
@@ -25,5 +29,9 @@ public class Player {
 	
 	public int deposit(int price){
 		return account.deposit(price);
+	}
+	
+	public Color getColor(){
+		return playerColor;
 	}
 }
