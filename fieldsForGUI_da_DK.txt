@@ -94,6 +94,7 @@
 	leje::Leje: -4000;;
 ||
 	type::Street;;
+	picture::Default;;
 	backgroundColor::197,,142,,47;;
 	foregroundColor::0,,0,,0;;
 	title::Walled City;; 
@@ -102,6 +103,7 @@
 	leje::Leje: +5000;;
 ||
 	type::Street;;
+	picture::Default;;
 	backgroundColor::197,,142,,47;;
 	foregroundColor::0,,0,,0;;
 	title::Monastery;; 
@@ -110,6 +112,7 @@
 	leje::Leje: +500;;
 ||
 	type::Street;;
+	picture::Default;;
 	backgroundColor::197,,142,,47;;
 	foregroundColor::0,,0,,0;;
 	title::Huts in the mountain;; 
@@ -118,6 +121,7 @@
 	leje::Leje: -100 x dice;;
 ||
 	type::Street;;
+	picture::Default;;
 	backgroundColor::197,,142,,47;;
 	foregroundColor::0,,0,,0;;
 	title::The pit;; 
@@ -142,33 +146,37 @@
 	leje::Leje: -4000 or 10% of all assets;;
 ||
 	type::Street;;
+	picture::Default;;
 	backgroundColor::197,,142,,47;;
 	foregroundColor::0,,0,,0;;
-	title::Second Sail;; 
-	subText::500-4000 point;; 
+	title::Second Sail;;  
+	subText:: ;; 
 	description::Second Sail;;
 	leje::Betal: 500-4000;;
 ||
 	type::Street;;
+	picture::Default;;
 	backgroundColor::197,,142,,47;;
 	foregroundColor::0,,0,,0;;
 	title::Sea Grover;; 
-	subText::500-4000 point;; 
+	subText:: ;; 
 	description::Sea Grover;;
 	leje::Leje: +650;;
 ||
 	type::Street;;
+	picture::Default;;
 	backgroundColor::197,,142,,47;;
 	foregroundColor::0,,0,,0;;
 	title::The buccaneers;; 
-	subText::500-4000 point;; 
+	subText:: ;; 
 	description::The buccaneers;;
 	leje::Betal: 500-4000;;
 ||
 	type::Street;;
+	picture::Default;;
 	backgroundColor::197,,142,,47;;
 	foregroundColor::0,,0,,0;;
 	title::Privateer Armade;; 
-	subText::500-4000 point;; 
+	subText:: ;; 
 	description::Privateer Armade;;
 	leje::Betal: 500-4000;;
