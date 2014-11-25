@@ -117,7 +117,6 @@ public class GameController {
 		newField=previousFieldPosition+currentThrowValue;
 		if (newField>21)
 			newField=newField%21;
-		System.out.println(newField);
 		return newField;
 	}
 
