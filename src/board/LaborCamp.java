@@ -2,9 +2,16 @@ package board;
 
 public class LaborCamp extends Ownable  {
 	
-	public LaborCamp(String name) {
+	private String name = null;
+	private int price;
+	
+	public LaborCamp(String name, int price) {
 		super(name);
-		// TODO Auto-generated constructor stub
+		
+		this.name = name;
+		this.price = price; 
+
+		
 	}
 
 	private int baseRent;
