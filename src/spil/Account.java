@@ -1,10 +1,7 @@
 package spil;
 
-import java.text.NumberFormat;
-
 public class Account {
 	
-	private NumberFormat fmt = NumberFormat.getCurrencyInstance();
 	private int balance;
 	
 	public void setAccount(int initial){
@@ -28,8 +25,5 @@ public class Account {
 		return balance;
 	}
 
-	public String toString (){
-		return (fmt.format(balance));
-	}
 }
 
