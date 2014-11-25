@@ -43,7 +43,7 @@ public class GameController {
 			setDiceGUI(diceCup.getDiceCup()); //Sætter terningerne i spillet ud fra værdierne fra diceCup slaget.
 			
 			//Sætter spillers position ud fra slagets værdi og den gamle position.
-			//players[currentPlayer-1].setPosition(moveToField(diceCup.getTotalDiceCup(), players[currentPlayer-1].getPosition()));
+			players[currentPlayer-1].setPosition(moveToField(diceCup.getTotalDiceCup(), players[currentPlayer-1].getPosition()));
 			
 			//setPlayerPositionGUI(oldPlayerPosition, players[currentPlayer-1].getPosition(), players[currentPlayer-1].getName());
 			
@@ -60,7 +60,7 @@ public class GameController {
 	private void setPlayers (int PlayerID) {
 		players[PlayerID] = new Player();
 		String playerName = (GUI.getUserString(ICO.messages.getString("inputNameGUI")+(PlayerID+1)+"?"));
-		Color playerColor = getPlayerColor();
+		Color playerColor = getPlayerColor();		
 		players[PlayerID].setPlayer(playerName, 30000, playerColor); //"What is your name,"
 		iCO.setNewPlayerGUI(players[PlayerID].getName(), players[PlayerID].getBalance(), players[PlayerID].getColor());
 	}
@@ -111,10 +111,11 @@ public class GameController {
 	}
 
 	private int moveToField(int currentThrowValue, int previousFieldPosition) { //IKKE LAVET
-		int newField = 0;
-		
-		// ##KODE HER##
-		
+		int newField=0;
+		newField=previousFieldPosition+currentThrowValue;
+		if (newField>21)
+			newField=newField%21;
+		System.out.println(newField);
 		return newField;
 	}
 
