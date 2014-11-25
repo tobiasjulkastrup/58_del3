@@ -32,6 +32,8 @@ public class GameController {
 		// Adds as many players as numberOfPlayers
 		for (int i = 0; i < numberOfPlayers; i++) {
 			setPlayers(i);
+			players[i].setPosition(1);
+			GUI.setCar(players[i].getPosition(), players[i].getName());
 		}
 		
 		while (mode == false){
@@ -45,9 +47,9 @@ public class GameController {
 			//Sætter spillers position ud fra slagets værdi og den gamle position.
 			players[currentPlayer-1].setPosition(moveToField(diceCup.getTotalDiceCup(), players[currentPlayer-1].getPosition()));
 			
-			//setPlayerPositionGUI(oldPlayerPosition, players[currentPlayer-1].getPosition(), players[currentPlayer-1].getName());
+			setPlayerPositionGUI(oldPlayerPosition, players[currentPlayer-1].getPosition(), players[currentPlayer-1].getName());
 			
-			//getFieldEffect(players[currentPlayer-1].getPosition()); // Tjekker hvad denne field position gør
+			//getFieldEffect(players[currentPlayer].getPosition()); // Tjekker hvad denne field position gør
 			
 			currentPlayer = nextPlayer(currentPlayer, numberOfPlayers); //Sætter currentPlayer for næste spiller
 			
