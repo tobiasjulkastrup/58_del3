@@ -10,9 +10,10 @@ public class Player {
 	private int playerPosition;
 	
 	
-	public void setPlayer (String name, int startSaldo, Color playerColorFromGUI){
+	public void setPlayer (String name, int startSaldo, Color playerColorFromGUI ){
 		playerName = name;
 		playerColor = playerColorFromGUI;
+		//playerPosition=position; 
 		account = new Account();
 		account.setAccount(startSaldo);
 	}

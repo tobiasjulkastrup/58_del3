@@ -29,7 +29,7 @@ public class DiceCup {
 		int totalDiceValue = 0;
 		
 		for (int i = 0; i < rolls; i++) {
-			totalDiceValue =+ diceArray[i];
+			totalDiceValue =  totalDiceValue + diceArray[i];
 		}
 		
 		return totalDiceValue;
