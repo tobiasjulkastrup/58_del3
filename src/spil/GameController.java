@@ -14,6 +14,7 @@ public class GameController {
 		boolean mode = false; // Holder styr på om spillet er færdigt
 		int currentPlayer = 1; // Holder styr på hvis tur det er (starter ved Player 1)
 		int currentPlayerPosition;
+		int oldPlayerPosition;
 		
 		// Opretter en GUI med field info fra fieldsForGUI.txt
 		iCO = new ICO();
@@ -34,16 +35,23 @@ public class GameController {
 		}
 		
 		while (mode == false){
+			oldPlayerPosition = players[currentPlayer-1].getPosition(); // Gemmer midlertidig en variable med spillerens tidligere position til GUI brug.
 			
 			GUI.getUserButtonPressed("Tryk på kast for at slå med terningerne Player " +currentPlayer, "Kast");
 			diceCup.setDiceCup(2, 6); //Laver 2 terningekast med en 6 sidet terning.
 			
 			setDiceGUI(diceCup.getDiceCup()); //Sætter terningerne i spillet ud fra værdierne fra diceCup slaget.
 			
-			//Sætter spillers position ud fra den gamle position og slagets værdi.
-			players[currentPlayer-1].setPosition(moveToField(diceCup.getTotalDiceCup(), players[currentPlayer-1].getPosition()));
+			//Sætter spillers position ud fra slagets værdi og den gamle position.
+			//players[currentPlayer-1].setPosition(moveToField(diceCup.getTotalDiceCup(), players[currentPlayer-1].getPosition()));
+			
+			//setPlayerPositionGUI(oldPlayerPosition, players[currentPlayer-1].getPosition(), players[currentPlayer-1].getName());
+			
+			//getFieldEffect(players[currentPlayer-1].getPosition()); // Tjekker hvad denne field position gør
 			
 			currentPlayer = nextPlayer(currentPlayer, numberOfPlayers); //Sætter currentPlayer for næste spiller
+			
+			mode = checkForWinner();
 		}
 		
 		
@@ -102,7 +110,7 @@ public class GameController {
 		return currentPlayer;
 	}
 
-	private int moveToField(int currentThrowValue, int previousFieldPosition) { // IKKE LAVET
+	private int moveToField(int currentThrowValue, int previousFieldPosition) { //IKKE LAVET
 		int newField = 0;
 		
 		// ##KODE HER##
@@ -114,5 +122,20 @@ public class GameController {
 		
 		GUI.setDice(allDiceCupValues[0], allDiceCupValues[1]);
 		
+	}
+
+	private void setPlayerPositionGUI(int oldPlayerPositionOnBoard, int newPlayerPositionOnBoard, String currentPlayerName) {
+		GUI.removeCar(oldPlayerPositionOnBoard, currentPlayerName);
+		GUI.setCar(newPlayerPositionOnBoard, currentPlayerName);
+	}
+
+	private void getFieldEffect(int newPlayerPositionOnBoard) { //IKKE LAVET
+		// Alt kode mht til field skal her ind.
+	}
+
+	private boolean checkForWinner() { //Ikke Lavet
+		boolean winnerFound = false;
+		
+		return winnerFound;
 	}
 }

@@ -9,6 +9,7 @@ public class Player {
 	private Color playerColor;
 	private int playerPosition;
 	
+	
 	public void setPlayer (String name, int startSaldo, Color playerColorFromGUI){
 		playerName = name;
 		playerColor = playerColorFromGUI;
@@ -43,4 +44,5 @@ public class Player {
 	public int getPosition(){
 		return playerPosition;
 	}
+	
 }
