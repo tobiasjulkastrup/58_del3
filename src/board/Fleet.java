@@ -17,6 +17,15 @@ public class Fleet extends Ownable {
 	@Override
 	public void landOnField(Player player) {
 
+		
+		
+		
+	}
+
+	@Override
+	public int getRent() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

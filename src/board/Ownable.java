@@ -2,7 +2,7 @@ package board;
 
 import spil.Player;
 
-public class Ownable extends Field {
+public abstract class Ownable extends Field {
 
 	public Ownable(String name) {
 		super(name);
@@ -12,12 +12,31 @@ public class Ownable extends Field {
 	private int price;
 	private Player owner;
 
-	public int getRent() {
-		return price;
-	}
+	public abstract int getRent();
 
 	@Override
 	public void landOnField(Player player) {
+		
+		// skal tjekke om owner = null
+		
+		if (owner == null) {
+			
+			// hvis owner = null skal spilleren skal vælge om han/hun vil købe feltet
+			
+			
+			
+		}
+		
+		else {
+			
+			// hvis owner /= null skal spilleren betale lejen
+			
+			
+			
+		}
+		
+
+	
 
 	}
 
