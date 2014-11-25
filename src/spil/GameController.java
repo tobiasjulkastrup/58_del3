@@ -10,11 +10,16 @@ public class GameController {
 	
 	public void newGame() {
 		
-		int numberOfPlayers;
+		int numberOfPlayers; // Holder styr på hvor mange spillere der er med
+		boolean mode = false; // Holder styr på om spillet er færdigt
+		int currentPlayer = 1; // Holder styr på hvis tur det er (starter ved Player 1)
+		int currentPlayerPosition;
 		
 		// Opretter en GUI med field info fra fieldsForGUI.txt
 		iCO = new ICO();
 		iCO.setGUI();
+		
+		DiceCup diceCup = new DiceCup();
 	
 		GUI.showMessage(ICO.messages.getString("firstMessageGUI")); // "Welcome. Press ok to start the game."
 		numberOfPlayers = GUI.getUserInteger(ICO.messages.getString("numbersOfPlayersGUI")); // "How many players will play the game?"
@@ -28,6 +33,18 @@ public class GameController {
 			setPlayers(i);
 		}
 		
+		while (mode == false){
+			
+			GUI.getUserButtonPressed("Tryk på kast for at slå med terningerne Player " +currentPlayer, "Kast");
+			diceCup.setDiceCup(2, 6); //Laver 2 terningekast med en 6 sidet terning.
+			
+			setDiceGUI(diceCup.getDiceCup()); //Sætter terningerne i spillet ud fra værdierne fra diceCup slaget.
+			
+			//Sætter spillers position ud fra den gamle position og slagets værdi.
+			players[currentPlayer-1].setPosition(moveToField(diceCup.getTotalDiceCup(), players[currentPlayer-1].getPosition()));
+			
+			currentPlayer = nextPlayer(currentPlayer, numberOfPlayers); //Sætter currentPlayer for næste spiller
+		}
 		
 		
 	}
@@ -76,5 +93,26 @@ public class GameController {
 		
 		return playerColor;
 	}
+	
+	private int nextPlayer(int currentPlayer, int numberOfPlayers) {
+		if (currentPlayer == numberOfPlayers)
+			currentPlayer = 1;
+		else
+			currentPlayer++;
+		return currentPlayer;
+	}
+
+	private int moveToField(int currentThrowValue, int previousFieldPosition) { // IKKE LAVET
+		int newField = 0;
 		
+		// ##KODE HER##
+		
+		return newField;
+	}
+
+	private void setDiceGUI(int[] allDiceCupValues) {
+		
+		GUI.setDice(allDiceCupValues[0], allDiceCupValues[1]);
+		
+	}
 }

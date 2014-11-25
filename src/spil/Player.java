@@ -7,6 +7,7 @@ public class Player {
 	private String playerName;
 	private Account account;
 	private Color playerColor;
+	private int playerPosition;
 	
 	public void setPlayer (String name, int startSaldo, Color playerColorFromGUI){
 		playerName = name;
@@ -33,5 +34,13 @@ public class Player {
 	
 	public Color getColor(){
 		return playerColor;
+	}
+	
+	public void setPosition(int newPlayerPosition){
+		playerPosition = newPlayerPosition;
+	}
+	
+	public int getPosition(){
+		return playerPosition;
 	}
 }
