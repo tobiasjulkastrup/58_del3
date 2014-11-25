@@ -1,6 +1,7 @@
 package spil;
 
 import boundaryToMatador.GUI;
+
 import java.awt.Color;
 
 public class GameController {
@@ -13,7 +14,6 @@ public class GameController {
 		int numberOfPlayers; // Holder styr på hvor mange spillere der er med
 		boolean mode = false; // Holder styr på om spillet er færdigt
 		int currentPlayer = 1; // Holder styr på hvis tur det er (starter ved Player 1)
-		int currentPlayerPosition;
 		int oldPlayerPosition;
 		
 		// Opretter en GUI med field info fra fieldsForGUI.txt
@@ -49,7 +49,7 @@ public class GameController {
 			
 			setPlayerPositionGUI(oldPlayerPosition, players[currentPlayer-1].getPosition(), players[currentPlayer-1].getName());
 			
-			//getFieldEffect(players[currentPlayer].getPosition()); // Tjekker hvad denne field position gør
+			//getFieldEffect(players[currentPlayer-1].getPosition(), players[currentPlayer-1].getBalance()); // Tjekker hvad denne field position gør
 			
 			currentPlayer = nextPlayer(currentPlayer, numberOfPlayers); //Sætter currentPlayer for næste spiller
 			
@@ -60,8 +60,25 @@ public class GameController {
 	}
 	
 	private void setPlayers (int PlayerID) {
+		boolean nameOK = false;
+		boolean nameBad = false;
+		String playerName = null;
+		
 		players[PlayerID] = new Player();
-		String playerName = (GUI.getUserString(ICO.messages.getString("inputNameGUI")+(PlayerID+1)+"?"));
+		
+		while (nameOK == false) {
+			playerName = (GUI.getUserString(ICO.messages.getString("inputNameGUI")+(PlayerID+1)+"?"));
+			
+			for (int i = 0; i < PlayerID; i++) {
+				nameBad = players[i].getName().equals(playerName);
+			}
+			
+			if (nameBad == true)
+				GUI.showMessage(ICO.messages.getString("badName"));
+			else
+				nameOK = true;
+		}
+		
 		Color playerColor = getPlayerColor();		
 		players[PlayerID].setPlayer(playerName, 30000, playerColor); //"What is your name,"
 		iCO.setNewPlayerGUI(players[PlayerID].getName(), players[PlayerID].getBalance(), players[PlayerID].getColor());
@@ -112,7 +129,7 @@ public class GameController {
 		return currentPlayer;
 	}
 
-	private int moveToField(int currentThrowValue, int previousFieldPosition) { //IKKE LAVET
+	private int moveToField(int currentThrowValue, int previousFieldPosition) {
 		int newField=0;
 		newField=previousFieldPosition+currentThrowValue;
 		if (newField>21)
@@ -131,7 +148,8 @@ public class GameController {
 		GUI.setCar(newPlayerPositionOnBoard, currentPlayerName);
 	}
 
-	private void getFieldEffect(int newPlayerPositionOnBoard) { //IKKE LAVET
+	@SuppressWarnings("unused")
+	private void getFieldEffect(int newPlayerPositionOnBoard, int playerBalance) { //IKKE LAVET
 		// Alt kode mht til field skal her ind.
 	}
 
