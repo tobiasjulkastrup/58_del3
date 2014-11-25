@@ -23,7 +23,7 @@ public class GameController {
 		DiceCup diceCup = new DiceCup();
 	
 		GUI.showMessage(ICO.messages.getString("firstMessageGUI")); // "Welcome. Press ok to start the game."
-		numberOfPlayers = GUI.getUserInteger(ICO.messages.getString("numbersOfPlayersGUI")); // "How many players will play the game?"
+		numberOfPlayers = GUI.getUserInteger(ICO.messages.getString("numbersOfPlayersGUI"), 1, 6); // "How many players will play the game?"
 		
 		// Add players to the game and on the board
 		
@@ -52,6 +52,8 @@ public class GameController {
 			//getFieldEffect(players[currentPlayer-1].getPosition(), players[currentPlayer-1].getBalance()); // Tjekker hvad denne field position gør
 			
 			currentPlayer = nextPlayer(currentPlayer, numberOfPlayers); //Sætter currentPlayer for næste spiller
+			
+			
 			
 			mode = checkForWinner();
 		}
