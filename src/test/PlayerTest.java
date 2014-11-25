@@ -1,24 +1,53 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
+import java.awt.Color;
 
 import org.junit.Test;
 
+import spil.Player;
+
 public class PlayerTest {
 
-	@Test
-	public void testSetPlayer() {
-		fail("Not yet implemented");
-	}
+//	@Test
+//	public void testSetPlayer() {
+//		
+//		Player player;
+//		player =  new Player();
+//		Color playerColor;
+//		
+//		player.setPlayer("John", 500, Color.black);
+//		
+//		assertEquals(expected, player.);
+		
+//	}
 
 	@Test
 	public void testGetName() {
-		fail("Not yet implemented");
+		// preconditions
+		Player player;
+		player =  new Player();
+		player.getName();
+		// test
+		player.setPlayer("John", 0, null);
+		//postconditions
+		assertEquals("John", player.getName());
+
 	}
 
 	@Test
 	public void testGetColor() {
-		fail("Not yet implemented");
+		// precondtions
+		Player player;
+		player =  new Player();
+		Color playerColor;
+		// test
+		player.setPlayer(null, 0, Color.BLUE);
+		// postconditions		
+		assertEquals(Color.BLUE, player.getColor());
+
 	}
 
 }
