@@ -4,8 +4,6 @@ import spil.Player;
 
 public class Fleet extends Ownable {
 
-	private String name = null;
-	private int price;
 	private int RENT_1 = 500;
 	private int RENT_2 = 1000;
 	private int RENT_3 = 2000;
@@ -13,11 +11,7 @@ public class Fleet extends Ownable {
 
 
 	public Fleet(String name, int price) {
-		super(name);
-		
-		this.name = name;
-		this.price = price; 
-
+		super(name, price);
 
 	}
 

@@ -4,13 +4,14 @@ import spil.Player;
 
 public abstract class Ownable extends Field {
 
-	public Ownable(String name) {
-		super(name);
-
-	}
-
 	private int price;
 	private Player owner;
+	
+	public Ownable(String name, int price) {
+		super(name);
+		this.price = price;
+
+	}
 
 	public abstract int getRent();
 
@@ -39,5 +40,8 @@ public abstract class Ownable extends Field {
 	
 
 	}
-
+	
+	public int getPrice(){
+		return price;
+	}
 }
