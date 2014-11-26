@@ -24,7 +24,7 @@ public abstract class Ownable extends Field {
 			
 			// hvis owner = null skal spilleren skal vælge om han/hun vil købe feltet
 			
-			
+			player.withdraw(getPrice());
 			
 		}
 		
