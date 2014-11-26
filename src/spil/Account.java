@@ -17,7 +17,7 @@ public class Account {
 		if ((price + balance) < 0){  // withdraw value exceeds balance
 			balance=0;
 		} else
-			balance = balance + price;
+			balance = balance - price;
 		return balance;
 	 }
 
