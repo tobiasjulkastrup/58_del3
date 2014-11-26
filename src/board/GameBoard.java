@@ -2,12 +2,12 @@ package board;
 
 public class GameBoard {
 
-	public Field[] Fields;
+	public Field[] fields;
 	private final int TOTALFIELDS = 21;
 //	private int i;
 
 	public GameBoard() {
-		Field[] fields = new Field[TOTALFIELDS];
+		fields = new Field[TOTALFIELDS];
 
 		fields[0] = new Territory("Tribe Encampment", 1000, 100);
 		fields[1] = new Territory("Crater", 1500, 300);

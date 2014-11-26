@@ -10,6 +10,7 @@ public class GameController {
 
 	private Player[] players;
 	private ICO iCO;
+	private GameBoard gameBoard;
 	
 	public void newGame() {
 		
@@ -22,8 +23,7 @@ public class GameController {
 		iCO = new ICO();
 		iCO.setGUI();
 		
-		@SuppressWarnings("unused")
-		GameBoard gameBoard = new GameBoard();
+		gameBoard = new GameBoard();
 		
 		DiceCup diceCup = new DiceCup();
 	
@@ -54,7 +54,7 @@ public class GameController {
 			
 			setPlayerPositionGUI(oldPlayerPosition, players[currentPlayer-1].getPosition(), players[currentPlayer-1].getName());
 			
-//			getFieldEffect(players[currentPlayer-1].getPosition(), players[currentPlayer-1].getBalance()); // Tjekker hvad denne field position gør
+			getFieldEffect(players[currentPlayer-1].getPosition(), players[currentPlayer-1].getBalance(), currentPlayer); // Tjekker hvad denne field position gør
 			
 			currentPlayer = nextPlayer(currentPlayer, numberOfPlayers); //Sætter currentPlayer for næste spiller
 			
@@ -155,9 +155,10 @@ public class GameController {
 		GUI.setCar(newPlayerPositionOnBoard, currentPlayerName);
 	}
 
-	@SuppressWarnings("unused")
-	private void getFieldEffect(int newPlayerPositionOnBoard, int playerBalance) { //IKKE LAVET
+	private void getFieldEffect(int newPlayerPositionOnBoard, int playerBalance, int currentPlayer) { //IKKE LAVET
 		
+		gameBoard.fields[newPlayerPositionOnBoard-1].landOnField(players[currentPlayer-1]);
+		GUI.setBalance(players[currentPlayer-1].getName(), players[currentPlayer-1].getBalance());
 		
 	}
 
