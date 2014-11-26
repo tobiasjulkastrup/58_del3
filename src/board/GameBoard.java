@@ -7,7 +7,6 @@ public class GameBoard {
 //	private int i;
 
 	public GameBoard() {
-
 		Field[] fields = new Field[TOTALFIELDS];
 
 		fields[0] = new Territory("Tribe Encampment", 1000, 100);
@@ -31,7 +30,6 @@ public class GameBoard {
 		fields[18] = new Fleet("Sea Grover", 4000);
 		fields[19] = new Fleet("The buccaneers", 4000);
 		fields[20] = new Fleet("Privateer Armade", 4000);
-		
 	}
 
 //	public String toString() {
