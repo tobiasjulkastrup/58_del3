@@ -4,6 +4,8 @@ import boundaryToMatador.GUI;
 
 import java.awt.Color;
 
+import board.GameBoard;
+
 public class GameController {
 
 	private Player[] players;
@@ -19,6 +21,9 @@ public class GameController {
 		// Opretter en GUI med field info fra fieldsForGUI.txt
 		iCO = new ICO();
 		iCO.setGUI();
+		
+		@SuppressWarnings("unused")
+		GameBoard gameBoard = new GameBoard();
 		
 		DiceCup diceCup = new DiceCup();
 	
@@ -49,7 +54,7 @@ public class GameController {
 			
 			setPlayerPositionGUI(oldPlayerPosition, players[currentPlayer-1].getPosition(), players[currentPlayer-1].getName());
 			
-			//getFieldEffect(players[currentPlayer-1].getPosition(), players[currentPlayer-1].getBalance()); // Tjekker hvad denne field position gør
+//			getFieldEffect(players[currentPlayer-1].getPosition(), players[currentPlayer-1].getBalance()); // Tjekker hvad denne field position gør
 			
 			currentPlayer = nextPlayer(currentPlayer, numberOfPlayers); //Sætter currentPlayer for næste spiller
 			
@@ -152,7 +157,8 @@ public class GameController {
 
 	@SuppressWarnings("unused")
 	private void getFieldEffect(int newPlayerPositionOnBoard, int playerBalance) { //IKKE LAVET
-		// Alt kode mht til field skal her ind.
+		
+		
 	}
 
 	private boolean checkForWinner() { //Ikke Lavet
