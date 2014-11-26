@@ -25,8 +25,8 @@ public class GameBoard {
 		Fields[12] = new Refuge("Monastery");
 		Fields[13] = new LaborCamp("Huts in the mountain", 2500);
 		Fields[14] = new LaborCamp("The pit", 2500);
-		Fields[15] = new Tax("Goldmine");
-		Fields[16] = new Tax("Caravan");
+		Fields[15] = new Tax("Goldmine", 1, 1);
+		Fields[16] = new Tax("Caravan", 1, 1);
 		Fields[17] = new Fleet("Second Sail", 4000);
 		Fields[18] = new Fleet("Sea Grover", 4000);
 		Fields[19] = new Fleet("The buccaneers", 4000);

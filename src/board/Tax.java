@@ -28,7 +28,7 @@ public class Tax extends Field {
 			//Udregn taxRate ud fra gem i int variable
 			player.getBalance();
 			//Spørg om man vil betale taxRate eller taxAmount
-			GUI.getUserButtonPressed("taxChoice", "Tax Rate", "TaxAmount")
+			GUI.getUserButtonPressed("taxChoice", "Tax Rate", "TaxAmount");
 			//Find ud af hvilken knap der bliver trykket på, og udfør withdraw efter hvad der bliver valgt.
 	}
 	

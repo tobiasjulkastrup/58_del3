@@ -32,6 +32,8 @@ public abstract class Ownable extends Field {
 			
 			// hvis owner /= null skal spilleren betale lejen
 			
+			player.getBalance();
+			player.withdraw(getRent());
 			
 			
 		}

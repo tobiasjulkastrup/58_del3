@@ -2,6 +2,7 @@ package board;
 
 public class Territory extends Ownable {
 	
+
 	private int rent;
 	
 
@@ -11,8 +12,11 @@ public class Territory extends Ownable {
 		super(name, price);
 		this.rent = rent;
 	
-	
+
+		
 	}
+	
+
 	
 	@Override
 	public int getRent() {
