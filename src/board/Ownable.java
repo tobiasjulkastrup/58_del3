@@ -10,7 +10,6 @@ public abstract class Ownable extends Field {
 	public Ownable(String name, int price) {
 		super(name);
 		this.price = price;
-
 	}
 
 	public int getPrice(){
@@ -23,5 +22,17 @@ public abstract class Ownable extends Field {
 
 	public Player getOwner(){
 		return owner;
+	}
+	
+	protected boolean checkForCapital(Player player){
+		// Tjekker om spilleren har råd til at købe en købbar plads på brættet.
+		boolean hasMoneyEnough = false;
+		
+		//Hvis playeren har pengene som en grund koster ændres hasMoneyEnough til true.
+		if (player.getBalance() <= getPrice())
+			hasMoneyEnough = true;
+		
+		// hasMoneyEnough returnes true hvis der er penge og false hvis der ikke er.
+		return hasMoneyEnough;
 	}
 }
