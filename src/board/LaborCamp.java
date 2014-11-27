@@ -4,9 +4,12 @@ import spil.Player;
 
 public class LaborCamp extends Ownable  {
 	
-	public LaborCamp(String name, int price) {
+	private int fieldPlace;
+	
+	public LaborCamp(String name, int price, int fieldPlace) {
 		
 		super(name, price);
+		this.fieldPlace = fieldPlace+1;
 
 	}
 
