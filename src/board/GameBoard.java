@@ -8,10 +8,10 @@ public class GameBoard {
 	private final int TOTALFIELDS = 22;
 
 	public GameBoard(GameController gameController) {
-		
+
 		fields = new Field[TOTALFIELDS];
-		
-		//fields[0] er tom da det er Starts plads på brættet
+
+		// fields[0] er tom da det er Starts plads på brættet
 		fields[1] = new Territory("Tribe Encampment", 1000, 100, 1);
 		fields[2] = new Territory("Crater", 1500, 300, 2);
 		fields[3] = new Territory("Mountain", 2000, 500, 3);

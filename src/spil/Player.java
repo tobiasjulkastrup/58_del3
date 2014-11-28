@@ -8,42 +8,41 @@ public class Player {
 	private Account account;
 	private Color playerColor;
 	private int playerPosition;
-	
-	
-	public void setPlayer (String name, int startSaldo, Color playerColorFromGUI ){
+
+	public void setPlayer(String name, int startSaldo, Color playerColorFromGUI) {
 		playerName = name;
 		playerColor = playerColorFromGUI;
-		//playerPosition=position; 
+		// playerPosition=position;
 		account = new Account();
 		account.setAccount(startSaldo);
 	}
-	
-	public String getName(){
+
+	public String getName() {
 		return playerName;
 	}
-	
-	public int getBalance(){
+
+	public int getBalance() {
 		return account.getBalance();
 	}
-	
-	public int withdraw(int price){
+
+	public int withdraw(int price) {
 		return account.withdraw(price);
 	}
-	
-	public int deposit(int price){
+
+	public int deposit(int price) {
 		return account.deposit(price);
 	}
-	
-	public Color getColor(){
+
+	public Color getColor() {
 		return playerColor;
 	}
-	
-	public void setPosition(int newPlayerPosition){
+
+	public void setPosition(int newPlayerPosition) {
 		playerPosition = newPlayerPosition;
 	}
-	
-	public int getPosition(){
+
+	public int getPosition() {
 		return playerPosition;
 	}
-	
+
 }

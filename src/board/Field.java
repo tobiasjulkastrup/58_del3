@@ -14,7 +14,7 @@ public abstract class Field {
 
 	}
 
-	public String getName(){
+	public String getName() {
 
 		return name;
 
