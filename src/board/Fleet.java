@@ -2,6 +2,7 @@ package board;
 
 import boundaryToMatador.GUI;
 import spil.Player;
+import spil.ICO;
 
 public class Fleet extends Ownable {
 
@@ -31,13 +32,13 @@ public class Fleet extends Ownable {
 				boolean playerBuyBool = false;
 
 				playerBuyString = GUI.getUserButtonPressed(
-						"Flåden '" +getName()+ "', som du står ved er til salg for: " +getPrice()+ " " + "kr. " + "Vil du købe den?", 
-						"Ja", 
-						"Nej"
+						ICO.messages.getString("theFleet") +getName()+ ICO.messages.getString("fleetIsForSale") +getPrice()+ " " + ICO.messages.getString("valuta") + ICO.messages.getString("doYouWantToBuy"), 
+						ICO.messages.getString("Yes"), 
+						ICO.messages.getString("No")
 						);
 
 				//playerBuyBool sættes fra false til true, hvis playeren svare Ja
-				playerBuyBool = playerBuyString.equals("Ja");
+				playerBuyBool = playerBuyString.equals(ICO.messages.getString("Yes"));
 
 				//Hvis playeren vælger ja, trækkes pengene fra playerens account, han sættes som ejer af grunden og der sættes et hotel på vejen, så man kan se den er købt.
 				if (playerBuyBool == true){
@@ -86,21 +87,21 @@ public class Fleet extends Ownable {
 					//Hvis playeren har mindre en hvad der skal betales, får ejeren resten af spillerens penge.
 					if (playerBalanceTemp < totalPay){
 						player.withdraw(playerBalanceTemp);
-						GUI.showMessage(player.getName() + "du har ikke flere penge og " +getOwner().getName()+ " får dine resterende " +playerBalanceTemp);
+						GUI.showMessage(player.getName() + ICO.messages.getString("noMoreMoney") +getOwner().getName()+ " "+ICO.messages.getString("getsYourLast") +playerBalanceTemp);
 						payOwner(playerBalanceTemp);
 					} 
 					//Har spilleren nok, hæves hele beløbet
 					else {
 						player.withdraw(totalPay);
 						payOwner(totalPay);
-						GUI.showMessage(player.getName()+", du er landet på "+owner.getName()+"'s felt, som totalt ejer "+ownersTotalFleets+" flåder og du skal derfor betale "+totalPay);
+						GUI.showMessage(player.getName()+ICO.messages.getString("youLandedOn"+owner.getName()+"ownersFieldWhoOwns")+ownersTotalFleets+" "+ICO.messages.getString("ownersFieldWhoOwns")+totalPay);
 					}
 
 					//Den nye balance for ejeren sættes her, da den ikke automatisk sættes efter endt runde.
 					GUI.setBalance(getOwner().getName(), getOwner().getBalance());
 					
 				} else
-					GUI.showMessage(player.getName()+", du er stoppet ved din egen flåde");
+					GUI.showMessage(player.getName()+ICO.messages.getString("youOwnFleet"));
 				
 			}
 
