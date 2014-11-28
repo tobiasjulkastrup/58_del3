@@ -25,12 +25,8 @@ public class Territory extends Ownable {
 		// Tjekker om owner = null. Hvis true køres if-sætningen, der tjekker om spilleren har råd til at købe grunden og om han vil.
 		if (owner == null) {
 
-			// Boolean der sættes til false og ændres til true hvis playeren har kapital til at købe grunden
-			boolean capitalAvaliable = false;
-			capitalAvaliable = checkForCapital(player);
-
 			//Hvis playeren har kapital spørges playeren om han vil købe grunden.
-			if (capitalAvaliable = true){
+			if (player.getBalance() >= getPrice()){
 				String playerBuyString;
 				boolean playerBuyBool = false;
 
@@ -56,25 +52,30 @@ public class Territory extends Ownable {
 
 			// hvis owner /= null skal spilleren betale lejen
 
-			//laver en int playerBalanceTemp der tjekker playerens balance (så der ikke kan hæves mere end han har)
-			int playerBalanceTemp;
-			playerBalanceTemp = player.getBalance();
+			//If-løkke der tjekker om playeren er ejeren
+			if (player.getName().equals(getOwner().getName()) == false) {
+				
+				//laver en int playerBalanceTemp der tjekker playerens balance (så der ikke kan hæves mere end han har)
+				int playerBalanceTemp;
+				playerBalanceTemp = player.getBalance();
 
-			//Hvis playeren har mindre en hvad lejen er, får ejeren resten af spillerens penge.
-			if (playerBalanceTemp < getRent()){
-				player.withdraw(playerBalanceTemp);
-				GUI.showMessage(player.getName() + "du har ikke flere penge og " +getOwner().getName()+ " får dine resterende " +playerBalanceTemp);
-				getOwner().deposit(playerBalanceTemp);
-			} 
-			//Har spilleren nok, hæves hele beløbet
-			else {
-				player.withdraw(getRent());
-				getOwner().deposit(getRent());
+				//Hvis playeren har mindre en hvad lejen er, får ejeren resten af spillerens penge.
+				if (playerBalanceTemp < getRent()){
+					player.withdraw(playerBalanceTemp);
+					GUI.showMessage(player.getName() + "du har ikke flere penge og " +getOwner().getName()+ " får dine resterende " +playerBalanceTemp);
+					payOwner(playerBalanceTemp);
+				} 
+				//Har spilleren nok, hæves hele beløbet
+				else {
+					player.withdraw(getRent());
+					payOwner(getRent());
+				}
+
+				//Den nye balance for ejeren sættes her, da den ikke automatisk sættes efter endt runde.
+				GUI.setBalance(getOwner().getName(), getOwner().getBalance());
+				
 			}
-
-			//Den nye balance for ejeren sættes her, da den ikke automatisk sættes efter endt runde.
-			GUI.setBalance(getOwner().getName(), getOwner().getBalance());
-
+		
 		}
 
 	}
