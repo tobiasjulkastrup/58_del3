@@ -194,6 +194,7 @@ public class GameController {
 			loserArray[loserCount] = players[currentPlayer-1].getName();
 			loserCount++;
 			GUI.removeAllCars(players[currentPlayer-1].getName());
+			GUI.showMessage(players[currentPlayer-1].getName() + ICO.messages.getString("playerLost"));
 		}
 
 	}
