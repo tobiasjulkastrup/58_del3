@@ -7,7 +7,6 @@ public class Territory extends Ownable {
 
 	private int rent;
 	private int fieldPlace;
-	private Player player;
 
 	public Territory(String name, int price, int rent, int fieldPlace) {
 
@@ -19,8 +18,6 @@ public class Territory extends Ownable {
 
 	@Override
 	public void landOnField(Player player) {
-
-		this.player = player;
 
 		// Tjekker om owner = null. Hvis true køres if-sætningen, der tjekker om spilleren har råd til at købe grunden og om han vil.
 		if (owner == null) {
