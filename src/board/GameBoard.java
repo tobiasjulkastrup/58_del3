@@ -33,7 +33,7 @@ public class GameBoard {
 		fields[18] = new Fleet(ICO.messages.getString("SecondSail"), 4000, 18, this);
 		fields[19] = new Fleet(ICO.messages.getString("SeaGrover"), 4000, 19, this);
 		fields[20] = new Fleet(ICO.messages.getString("TheBuccaneers"), 4000, 20, this);
-		fields[21] = new Fleet(ICO.messages.getString("PrivateerArmade"), 4000, 21, this);
+		fields[21] = new Fleet(ICO.messages.getString("PrivateerArmade"), 4000,	21, this);
 	}
 
 }

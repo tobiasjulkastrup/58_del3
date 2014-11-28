@@ -22,8 +22,8 @@
 	leje::Leje: ÷300;;
 ||
 	type::Street;;
-	backgroundColor::170,,224,,250;;
-	foregroundColor::0,,0,,0;;
+	backgroundColor::149,,84,,54;;
+	foregroundColor::255,,255,,255;;
 	title::Mountain;;
 	subText::÷500;;  
 	description::Mountain;;

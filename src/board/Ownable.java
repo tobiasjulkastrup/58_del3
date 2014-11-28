@@ -14,36 +14,40 @@ public abstract class Ownable extends Field {
 		this.price = price;
 	}
 
-	public int getPrice(){
+	public int getPrice() {
 		return price;
 	}
 
-	public void setOwner(Player owner){
+	public void setOwner(Player owner) {
 		this.owner = owner;
 	}
 
-	public Player getOwner(){
+	public Player getOwner() {
 		return owner;
 	}
-	
-	protected boolean checkForCapital(Player player){
+
+	protected boolean checkForCapital(Player player) {
 		// Tjekker om spilleren har råd til at købe en købbar plads på brættet.
 		boolean hasMoneyEnough = false;
-		
-		//Hvis playeren har pengene som en grund koster ændres hasMoneyEnough til true.
+
+		// Hvis playeren har pengene som en grund koster ændres hasMoneyEnough
+		// til true.
 		if (player.getBalance() <= getPrice())
 			hasMoneyEnough = true;
-		
-		// hasMoneyEnough returnes true hvis der er penge og false hvis der ikke er.
+
+		// hasMoneyEnough returnes true hvis der er penge og false hvis der ikke
+		// er.
 		return hasMoneyEnough;
 	}
-	protected void payOwner(int owed){
-		
-		if (getOwner().getBalance() > 0){
+
+	protected void payOwner(int owed) {
+
+		if (getOwner().getBalance() > 0) {
 			getOwner().deposit(owed);
-		}
-		else
-			GUI.showMessage(ICO.messages.getString("asTheOwner") +getOwner().getName()+ ICO.messages.getString("ownerBankruptMoneyToMinister"));
-			
+		} else
+			GUI.showMessage(ICO.messages.getString("asTheOwner")
+					+ getOwner().getName()
+					+ ICO.messages.getString("ownerBankruptMoneyToMinister"));
+
 	}
 }
