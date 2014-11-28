@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import board.GameBoard;
 import board.Territory;
+import spil.ICO;
 import spil.Player;
 import spil.GameController;
 
@@ -18,7 +19,10 @@ public class TerritoryTest {
 		Territory Territory;
 
 		// Opretter gameboard
-		GameBoard gameboard = new GameBoard(null);
+		ICO iCO = new ICO();
+		iCO.setLang("da", "DK");
+		GameController gameController = new GameController();
+		GameBoard gameboard = new GameBoard(gameController);
 
 		// Sætter tax
 		new Territory("Test territory", 2000, 1000, 1);

@@ -8,6 +8,7 @@ import org.junit.Test;
 import board.GameBoard;
 import board.Refuge;
 import board.Territory;
+import spil.ICO;
 import spil.Player;
 import spil.GameController;
 
@@ -19,8 +20,11 @@ public class RefugeTest {
 		
 		//preconditions
 		Refuge Refuge;
-		
-		GameBoard gameboard = new GameBoard(null);
+		ICO iCO = new ICO();
+		iCO.setLang("da", "DK");
+		GameController gameController = new GameController();
+		GameBoard gameboard = new GameBoard(gameController);
+
 		
 		new Refuge("test refuge", 5000);
 

@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import spil.GameController;
+import spil.ICO;
 import spil.Player;
 import board.Fleet;
 import board.GameBoard;
@@ -17,7 +19,10 @@ public class FleetTest {
 		Fleet fleet;
 
 		// opretter gameboard
-		GameBoard gameboard = new GameBoard(null);
+		ICO iCO = new ICO();
+		iCO.setLang("da", "DK");
+		GameController gameController = new GameController();
+		GameBoard gameboard = new GameBoard(gameController);
 
 		// sætter fleet
 		fleet = new Fleet("test fleet", 500, 1, null);
@@ -31,7 +36,7 @@ public class FleetTest {
 		gameboard.fields[19].landOnField(player);
 		
 		// postconditions
-		assertEquals(500, player.getBalance());
+		assertEquals(0, player.getBalance());
 
 	}
 
