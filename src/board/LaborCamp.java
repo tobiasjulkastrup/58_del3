@@ -85,7 +85,7 @@ public class LaborCamp extends Ownable {
 				GUI.setBalance(getOwner().getName(), getOwner().getBalance());
 
 			} else
-				GUI.showMessage(player.getName()+ICO.messages.getString("youOwnFleet"));
+				GUI.showMessage(player.getName()+ICO.messages.getString("yourOwnCamp"));
 
 		}
 

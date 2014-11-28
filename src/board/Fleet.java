@@ -94,14 +94,14 @@ public class Fleet extends Ownable {
 					else {
 						player.withdraw(totalPay);
 						payOwner(totalPay);
-						GUI.showMessage(player.getName()+ICO.messages.getString("youLandedOn"+owner.getName()+"ownersFieldWhoOwns")+ownersTotalFleets+" "+ICO.messages.getString("ownersFieldWhoOwns")+totalPay);
+						GUI.showMessage(player.getName()+ICO.messages.getString("youLandedOn")+owner.getName()+ICO.messages.getString("ownersFieldWhoOwns")+ownersTotalFleets+" "+ICO.messages.getString("ownersFieldWhoOwns")+totalPay);
 					}
 
 					//Den nye balance for ejeren sættes her, da den ikke automatisk sættes efter endt runde.
 					GUI.setBalance(getOwner().getName(), getOwner().getBalance());
 					
 				} else
-					GUI.showMessage(player.getName()+ICO.messages.getString("youOwnFleet"));
+					GUI.showMessage(player.getName()+ICO.messages.getString("yourOwnFleet"));
 				
 			}
 

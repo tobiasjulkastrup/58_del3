@@ -67,13 +67,15 @@ public class Territory extends Ownable {
 				else {
 					player.withdraw(getRent());
 					payOwner(getRent());
+					//IKKE LAVET
+//					GUI.showMessage(player.getName()+ICO.messages.getString("youLandedOn"+owner.getName()+"ownersFieldWhoOwns")+ownersTotalFleets+" "+ICO.messages.getString("ownersFieldWhoOwns")+getRent());
 				}
 
 				//Den nye balance for ejeren sættes her, da den ikke automatisk sættes efter endt runde.
 				GUI.setBalance(getOwner().getName(), getOwner().getBalance());
 				
 			} else
-				GUI.showMessage(player.getName()+ICO.messages.getString("youOwnFleet"));
+				GUI.showMessage(player.getName()+ICO.messages.getString("yourOwnTerritory"));
 		}
 
 	}
