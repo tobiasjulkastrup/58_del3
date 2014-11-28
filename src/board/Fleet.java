@@ -10,14 +10,12 @@ public class Fleet extends Ownable {
 	private int RENT_3 = 2000;
 	private int RENT_4 = 4000;
 	private int fieldPlace;
-	private int fleetNumb;
 	private GameBoard gameBoard;
 
-	public Fleet(String name, int price, int fieldPlace, int fleetNumb, GameBoard gameBoard) {
+	public Fleet(String name, int price, int fieldPlace, GameBoard gameBoard) {
 
 		super(name, price);
 		this.fieldPlace = fieldPlace+1;
-		this.fleetNumb = fleetNumb;
 		this.gameBoard = gameBoard;
 
 	}
