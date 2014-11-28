@@ -1,5 +1,6 @@
 package board;
 
+import boundaryToMatador.GUI;
 import spil.Player;
 
 public abstract class Ownable extends Field {
@@ -34,5 +35,14 @@ public abstract class Ownable extends Field {
 		
 		// hasMoneyEnough returnes true hvis der er penge og false hvis der ikke er.
 		return hasMoneyEnough;
+	}
+	protected void payOwner(int owed){
+		
+		if (getOwner().getBalance() > 0){
+			getOwner().deposit(owed);
+		}
+		else
+			GUI.showMessage("Da ejeren (" +getOwner().getName()+ ") er gået konkurs, går dine penge i stedet til en heldig minister's tegnebog");
+			
 	}
 }
