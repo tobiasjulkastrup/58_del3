@@ -29,13 +29,13 @@ public class Territory extends Ownable {
 				boolean playerBuyBool = false;
 
 				playerBuyString = GUI.getUserButtonPressed(
-						"Vejen '" +getName()+ "', som du står på er til salg for: " +getPrice()+ " " + "kr. " + "Vil du købe den?", 
-						"Ja", 
-						"Nej"
+						ICO.messages.getString("theRoad") +getName()+ ICO.messages.getString("roadForSale") +getPrice()+ " " + ICO.messages.getString("valuta") + ICO.messages.getString("doYouWantToBuy"), 
+						ICO.messages.getString("Yes"), 
+						ICO.messages.getString("No")
 						);
 
 				//playerBuyBool sættes fra false til true, hvis playeren svare Ja
-				playerBuyBool = playerBuyString.equals("Ja");
+				playerBuyBool = playerBuyString.equals(ICO.messages.getString("Yes"));
 
 				//Hvis playeren vælger ja, trækkes pengene fra playerens account, han sættes som ejer af grunden og der sættes et hotel på vejen, så man kan se den er købt.
 				if (playerBuyBool == true){
@@ -67,8 +67,7 @@ public class Territory extends Ownable {
 				else {
 					player.withdraw(getRent());
 					payOwner(getRent());
-					//IKKE LAVET
-//					GUI.showMessage(player.getName()+ICO.messages.getString("youLandedOn"+owner.getName()+"ownersFieldWhoOwns")+ownersTotalFleets+" "+ICO.messages.getString("ownersFieldWhoOwns")+getRent());
+					GUI.showMessage(player.getName()+ICO.messages.getString("youLandedOn")+owner.getName()+ICO.messages.getString("ownersTerritory")+getName()+ICO.messages.getString("andHaveToPay")+getRent());
 				}
 
 				//Den nye balance for ejeren sættes her, da den ikke automatisk sættes efter endt runde.
