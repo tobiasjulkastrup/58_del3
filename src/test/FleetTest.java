@@ -20,8 +20,7 @@ public class FleetTest {
 
 		// opretter gameboard
 		ICO iCO = new ICO();
-		iCO.setLang("da", "DK");
-		GameController gameController = new GameController();
+		iCO.setLang("da", "DK");		GameController gameController = new GameController();
 		GameBoard gameboard = new GameBoard(gameController);
 
 
@@ -30,7 +29,7 @@ public class FleetTest {
 		player = new Player();
 		player.setPlayer("John", 10000, null);
 
-		// Test af fleet
+		// Test af køb af fleet 1
 		gameboard.fields[19].landOnField(player);
 		// postconditions
 		assertEquals(6000, player.getBalance());
@@ -43,6 +42,7 @@ public class FleetTest {
 		//test af betaling til ejer
 		player = new Player();
 		player.setPlayer("Jens", 1100, null);
+		// lander på Johns felt
 		gameboard.fields[19].landOnField(player);
 		assertEquals(100, player.getBalance());
 	}
