@@ -18,7 +18,7 @@ public class Refuge extends Field {
 	public void landOnField(Player player) {
 
 		player.deposit(bonus);
-		GUI.showMessage("Du er landet på feltet " + getName() + "og modtager " + bonus );
+		GUI.showMessage("Du er landet på feltet " + getName() + " og modtager " + bonus );
 		
 	}
 

@@ -15,6 +15,7 @@ public class GameController {
 	private int loserCount;
 	private int numberOfPlayers = 0; // Holder styr på hvor mange spillere der er med
 	private boolean mode = false; // Holder styr på om spillet er færdigt
+	public DiceCup diceCup;
 
 	public void newGame() {
 
@@ -27,9 +28,9 @@ public class GameController {
 		iCO = new ICO();
 		iCO.setGUI();
 
-		gameBoard = new GameBoard();
+		gameBoard = new GameBoard(this);
 
-		DiceCup diceCup = new DiceCup();
+		diceCup = new DiceCup();
 
 		GUI.showMessage(ICO.messages.getString("firstMessageGUI")); // "Welcome. Press ok to start the game."
 		numberOfPlayers = GUI.getUserInteger(ICO.messages.getString("numbersOfPlayersGUI"), 2, 6); // "How many players will play the game?"

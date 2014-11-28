@@ -1,13 +1,14 @@
 package board;
 
+import spil.GameController;
+
 public class GameBoard {
 
 	public Field[] fields;
 	private final int TOTALFIELDS = 22;
-	
-	public FleetOwner fleetOwner;
 
-	public GameBoard() {
+	public GameBoard(GameController gameController) {
+		
 		fields = new Field[TOTALFIELDS];
 		
 		//fields[0] er tom da det er Starts plads på brættet
@@ -24,16 +25,14 @@ public class GameBoard {
 		fields[11] = new Territory("Castle", 8000, 4000, 11);
 		fields[12] = new Refuge("Walled City", 5000);
 		fields[13] = new Refuge("Monastery", 500);
-		fields[14] = new LaborCamp("Huts in the mountain", 2500, 14);
-		fields[15] = new LaborCamp("The pit", 2500, 15);
+		fields[14] = new LaborCamp("Huts in the mountain", 2500, 14, gameController);
+		fields[15] = new LaborCamp("The pit", 2500, 15, gameController);
 		fields[16] = new Tax("Goldmine", 5000, -1);
 		fields[17] = new Tax("Caravan", 500, 10);
-		fields[18] = new Fleet("Second Sail", 4000, 18, 1);
-		fields[19] = new Fleet("Sea Grover", 4000, 19, 2);
-		fields[20] = new Fleet("The buccaneers", 4000, 20, 3);
-		fields[21] = new Fleet("Privateer Armade", 4000, 21, 4);
-		
-		fleetOwner = new FleetOwner(4);
+		fields[18] = new Fleet("Second Sail", 4000, 18, 1, this);
+		fields[19] = new Fleet("Sea Grover", 4000, 19, 2, this);
+		fields[20] = new Fleet("The buccaneers", 4000, 20, 3, this);
+		fields[21] = new Fleet("Privateer Armade", 4000, 21, 4, this);
 	}
 
 }

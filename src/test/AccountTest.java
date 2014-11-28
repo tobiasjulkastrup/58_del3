@@ -38,7 +38,7 @@ public class AccountTest {
 		account.setAccount(1000);
 
 		// test
-		account.withdraw(-500);
+		account.withdraw(500);
 		// postcondition
 		assertEquals(500, account.getBalance());
 

@@ -20,7 +20,7 @@ public class Territory extends Ownable {
 	public void landOnField(Player player) {
 
 		// Tjekker om owner = null. Hvis true køres if-sætningen, der tjekker om spilleren har råd til at købe grunden og om han vil.
-		if (owner == null) {
+		if (getOwner() == null) {
 
 			//Hvis playeren har kapital spørges playeren om han vil købe grunden.
 			if (player.getBalance() >= getPrice()){
