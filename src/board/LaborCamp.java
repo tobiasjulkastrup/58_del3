@@ -2,17 +2,19 @@ package board;
 
 import boundaryToMatador.GUI;
 import spil.Player;
+import spil.GameController;
 
 public class LaborCamp extends Ownable  {
 	
 	private int fieldPlace;
-	@SuppressWarnings("unused")
 	private final int DICEPRICE = 100;
+	private GameController gameController;
 	
-	public LaborCamp(String name, int price, int fieldPlace) {
+	public LaborCamp(String name, int price, int fieldPlace, GameController gameController) {
 		
 		super(name, price);
 		this.fieldPlace = fieldPlace+1;
+		this.gameController = gameController;
 
 	}
 
@@ -20,7 +22,7 @@ public class LaborCamp extends Ownable  {
 	public void landOnField(Player player) {
 
 		// Tjekker om owner = null. Hvis true køres if-sætningen, der tjekker om spilleren har råd til at købe grunden og om han vil.
-		if (owner == null) {
+		if (getOwner() == null) {
 
 			//Hvis playeren har kapital spørges playeren om han vil købe arbejdslejren.
 			if (player.getBalance() >= getPrice()){
@@ -52,8 +54,8 @@ public class LaborCamp extends Ownable  {
 			//If-løkke der tjekker om playeren er ejeren
 			if (player.getName().equals(getOwner().getName()) == false) {
 				
-				int totalDicePrice = 100;
-//				int totalDicePrice = DICEPRICE * 
+				
+				int totalDicePrice = (DICEPRICE * gameController.diceCup.getTotalDiceCup());
 				
 				//laver en int playerBalanceTemp der tjekker playerens balance (så der ikke kan hæves mere end han har)
 				int playerBalanceTemp;
