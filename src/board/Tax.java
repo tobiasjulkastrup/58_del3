@@ -1,5 +1,6 @@
 package board;
 
+import spil.ICO;
 import spil.Player;
 import boundaryToMatador.GUI;
 
@@ -28,17 +29,20 @@ public class Tax extends Field {
 
 			taxRateChoiceString = GUI
 					.getUserButtonPressed(
-							"Du skal betale skat. Vil du betale en fast takst eller 10% af din pengebeholdning?",
-							"Fast takst (" +taxAmount+ ")", 
-							"10 % af dine penge (" +taxratetopay+ ")"
+							ICO.messages.getString("youHaveToPayTax"),
+							ICO.messages.getString("defaultRate") +taxAmount+ ")", 
+							ICO.messages.getString("10percent") +taxratetopay+ ")"
 							);
 
-			taxRateBool = taxRateChoiceString.equals("Fast takst (" +taxAmount+ ")");
+			taxRateBool = taxRateChoiceString.equals(ICO.messages.getString("defaultRate") +taxAmount+ ")");
 
 			if (true == taxRateBool) {
 				player.withdraw(taxAmount);
-			} else
+				GUI.showMessage(ICO.messages.getString("yourTaxChoice")+ICO.messages.getString("defaultRate") +taxAmount+ ")");
+			} else {
 				player.withdraw(taxratetopay);
+				GUI.showMessage(ICO.messages.getString("yourTaxChoice")+ICO.messages.getString("10percent") +taxratetopay+ ")");
+			}
 		}
 
 	}

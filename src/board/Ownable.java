@@ -2,6 +2,7 @@ package board;
 
 import boundaryToMatador.GUI;
 import spil.Player;
+import spil.ICO;
 
 public abstract class Ownable extends Field {
 
@@ -42,7 +43,7 @@ public abstract class Ownable extends Field {
 			getOwner().deposit(owed);
 		}
 		else
-			GUI.showMessage("Da ejeren (" +getOwner().getName()+ ") er gået konkurs, går dine penge i stedet til en heldig minister's tegnebog");
+			GUI.showMessage(ICO.messages.getString("asTheOwner") +getOwner().getName()+ ICO.messages.getString("ownerBankruptMoneyToMinister"));
 			
 	}
 }

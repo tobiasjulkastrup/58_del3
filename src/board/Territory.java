@@ -1,6 +1,7 @@
 package board;
 
 import boundaryToMatador.GUI;
+import spil.ICO;
 import spil.Player;
 
 public class Territory extends Ownable {
@@ -59,7 +60,7 @@ public class Territory extends Ownable {
 				//Hvis playeren har mindre en hvad lejen er, får ejeren resten af spillerens penge.
 				if (playerBalanceTemp < getRent()){
 					player.withdraw(playerBalanceTemp);
-					GUI.showMessage(player.getName() + "du har ikke flere penge og " +getOwner().getName()+ " får dine resterende " +playerBalanceTemp);
+					GUI.showMessage(player.getName() + ICO.messages.getString("noMoreMoney") +getOwner().getName()+ " "+ICO.messages.getString("getsYourLast") +playerBalanceTemp);
 					payOwner(playerBalanceTemp);
 				} 
 				//Har spilleren nok, hæves hele beløbet
@@ -71,8 +72,8 @@ public class Territory extends Ownable {
 				//Den nye balance for ejeren sættes her, da den ikke automatisk sættes efter endt runde.
 				GUI.setBalance(getOwner().getName(), getOwner().getBalance());
 				
-			}
-		
+			} else
+				GUI.showMessage(player.getName()+ICO.messages.getString("youOwnFleet"));
 		}
 
 	}

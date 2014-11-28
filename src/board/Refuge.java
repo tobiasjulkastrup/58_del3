@@ -1,6 +1,7 @@
 package board;
 
 import boundaryToMatador.GUI;
+import spil.ICO;
 import spil.Player;
 
 public class Refuge extends Field {
@@ -18,7 +19,7 @@ public class Refuge extends Field {
 	public void landOnField(Player player) {
 
 		player.deposit(bonus);
-		GUI.showMessage("Du er landet på feltet " + getName() + " og modtager " + bonus );
+		GUI.showMessage(player.getName() + ICO.messages.getString("youLandedOn") + getName() + " " + ICO.messages.getString("andRecieve") + bonus );
 		
 	}
 
