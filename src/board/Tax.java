@@ -33,9 +33,9 @@ public class Tax extends Field {
 							"10 % af dine penge (" +taxratetopay+ ")"
 							);
 
-			taxRateBool = taxRateChoiceString.equals("Fast takst" + taxAmount);
+			taxRateBool = taxRateChoiceString.equals("Fast takst (" +taxAmount+ ")");
 
-			if (taxRateBool = true) {
+			if (true == taxRateBool) {
 				player.withdraw(taxAmount);
 			} else
 				player.withdraw(taxratetopay);
