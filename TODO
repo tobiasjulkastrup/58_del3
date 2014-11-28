@@ -1,6 +1,7 @@
 TODO:
 
 Alle Strings skal ændres til MessageBundle.
+Ret på udseendet på GUI'en i fieldsForGUI_da_DK.txt
 Tilføj kommentar til koden.
 Mangler en måde at få fat i Dice totalt fra LaborCamp.
 Mangler en måde at finde ejerne af Fleet inde fra Fleet klassen.
