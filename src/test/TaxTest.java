@@ -2,38 +2,43 @@ package test;
 
 import static org.junit.Assert.*;
 
+import java.awt.Color;
+
 import org.junit.Test;
 
+import board.Tax;
 import spil.Player;
-import board.Fleet;
 import board.GameBoard;
-
-public class FleetTest {
+import spil.GameController;
+public class TaxTest {
 
 	@Test
 	public void testLandOnField() {
-		
 		//Preconditions
-		Fleet fleet;
-		
+		Tax tax;
 		//opretter gameboard
 		GameBoard gameboard = new GameBoard(null);
-		
-		// sÃ¦tter fleet
-		fleet= new Fleet("test fleet", 500, 1, 1, null);
-		
+		// sætter tax
+		tax= new Tax(null, 500, 1);
 		// opretter player
 		Player player;
 		player= new Player();
 		player.setPlayer("John", 1000, null);		
 		
-		
-		//Test af fleet
-		gameboard.fields[18].landOnField(player);
+		//Test for fast taxrate
+		gameboard.fields[17].landOnField(player);
 		//postconditions
 		assertEquals(500, player.getBalance());
-				
-				
+		
+		//Test for 10%
+		gameboard.fields[17].landOnField(player);
+		//post conditions
+		assertEquals(450, player.getBalance());
 	}
+
+//	@Test
+//	public void testTax() {
+//		fail("Not yet implemented");
+//	}
 
 }
