@@ -51,7 +51,7 @@ public class GameController {
 		while (mode == false){
 			oldPlayerPosition = players[currentPlayer-1].getPosition(); // Gemmer midlertidig en variable med spillerens tidligere position til GUI brug.
 
-			GUI.getUserButtonPressed("Tryk på kast for at slå med terningerne Player " +currentPlayer+ " (" +players[currentPlayer-1].getName()+ ")", "Kast");
+			GUI.getUserButtonPressed(ICO.messages.getString("pressTheTrowKey") +currentPlayer+ " (" +players[currentPlayer-1].getName()+ ")", ICO.messages.getString("Throw"));
 			diceCup.setDiceCup(2, 6); //Laver 2 terningekast med en 6 sidet terning.
 
 			setDiceGUI(diceCup.getDiceCup()); //Sætter terningerne i spillet ud fra værdierne fra diceCup slaget.
@@ -148,15 +148,6 @@ public class GameController {
 
 			int playerBalance = players[currentPlayer-1].getBalance();
 			
-			//Syso for om næste spiller må være med.
-			String stillInTheGame;
-			if (players[currentPlayer-1].getBalance() <= 0)
-				stillInTheGame = " og må ikke være med mere!";
-			else
-				stillInTheGame = " og er stadig med i spillet";
-			System.out.println("Næste player: "+players[currentPlayer-1].getName()+", har: " +players[currentPlayer-1].getBalance() + stillInTheGame);
-			
-			
 			if (playerBalance > 0)
 				nextPlayerPlaying = true;
 
@@ -190,7 +181,7 @@ public class GameController {
 			gameBoard.fields[newPlayerPositionOnBoard-1].landOnField(players[currentPlayer-1]);
 			GUI.setBalance(players[currentPlayer-1].getName(), players[currentPlayer-1].getBalance());
 		} else
-			GUI.showMessage("Du passer start");
+			GUI.showMessage(ICO.messages.getString("passStart"));
 
 
 	}
@@ -242,15 +233,11 @@ public class GameController {
 	}
 
 	private String loserToString(String[] loserArray, String winner){
-		String newWinnerString = "Spillet er slut og der er funder en vinder, som blev : ";
+		String newWinnerString = ICO.messages.getString("gameIsOverMessage");
 		newWinnerString = stringToNewString(newWinnerString, winner.toUpperCase());
 		for (int i = 0; i < loserArray.length; i++) {
-			newWinnerString = stringToNewString(newWinnerString, " \n");
-			newWinnerString = stringToNewString(newWinnerString, " Nr. ");
-			newWinnerString = stringToNewString(newWinnerString, Integer.toString(i+1));
-			newWinnerString = stringToNewString(newWinnerString, " som røg ud var: ");
-			newWinnerString = stringToNewString(newWinnerString, loserArray[i]);
-
+			newWinnerString = stringToNewString(newWinnerString, "\n"+ICO.messages.getString("Nr")+Integer.toString(i+1));
+			newWinnerString = stringToNewString(newWinnerString, " "+ICO.messages.getString("thatLostwas")+loserArray[i]);
 		}
 		return newWinnerString;
 	}
@@ -258,6 +245,5 @@ public class GameController {
 	private String stringToNewString(String first, String second){
 		return first + second;
 	}
-
 
 }
