@@ -12,28 +12,27 @@ public class FleetTest {
 
 	@Test
 	public void testLandOnField() {
-		
-		//Preconditions
+
+		// Preconditions
 		Fleet fleet;
-		
-		//opretter gameboard
+
+		// opretter gameboard
 		GameBoard gameboard = new GameBoard(null);
-		
+
 		// sætter fleet
-		fleet= new Fleet("test fleet", 500, 1, 1, null);
-		
+		fleet = new Fleet("test fleet", 500, 1, null);
+
 		// opretter player
 		Player player;
-		player= new Player();
-		player.setPlayer("John", 1000, null);		
+		player = new Player();
+		player.setPlayer("John", 500, null);
+
+		// Test af fleet
+		gameboard.fields[19].landOnField(player);
 		
-		
-		//Test af fleet
-		gameboard.fields[18].landOnField(player);
-		//postconditions
+		// postconditions
 		assertEquals(500, player.getBalance());
-				
-				
+
 	}
 
 }
