@@ -9,7 +9,6 @@ import spil.Account;
 
 public class AccountTest {
 
-
 	//
 	@Test
 
