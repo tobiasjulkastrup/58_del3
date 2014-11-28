@@ -10,14 +10,12 @@ public class Fleet extends Ownable {
 	private int RENT_3 = 2000;
 	private int RENT_4 = 4000;
 	private int fieldPlace;
-	private int fleetNumb;
 	private GameBoard gameBoard;
 
-	public Fleet(String name, int price, int fieldPlace, int fleetNumb, GameBoard gameBoard) {
+	public Fleet(String name, int price, int fieldPlace, GameBoard gameBoard) {
 
 		super(name, price);
 		this.fieldPlace = fieldPlace+1;
-		this.fleetNumb = fleetNumb;
 		this.gameBoard = gameBoard;
 
 	}
@@ -48,13 +46,13 @@ public class Fleet extends Ownable {
 					GUI.setHouses(fieldPlace, 1);
 					
 				}
-			} else {
+			}
+		} else {
 				
 				//If-løkke der tjekker om playeren er ejeren
 				if (player.getName().equals(getOwner().getName()) == false) {
-					System.out.println("Ejeren er ikke spilleren");
 					int totalPay = 0;
-					int checkedFleetNumb=fleetNumb;
+					int checkedFleetNumb=fieldPlace-1;
 					int ownersTotalFleets = 1;
 					
 					for (int i = 0; i < 3; i++) {
@@ -64,9 +62,10 @@ public class Fleet extends Ownable {
 							checkedFleetNumb++;
 						
 						boolean ownerOwnsFleet = false;
-						ownerOwnsFleet = ((Fleet)gameBoard.fields[checkedFleetNumb]).getOwner().getName().equals(getOwner().getName());
-						System.out.println("Test output");
-						System.out.println(((Fleet)gameBoard.fields[checkedFleetNumb]).getOwner().getName()+" ejer: "+((Fleet)gameBoard.fields[checkedFleetNumb]).getName()+" ("+((Fleet)gameBoard.fields[checkedFleetNumb]).fleetNumb+")");
+						
+						if (null != ((Fleet)gameBoard.fields[checkedFleetNumb]).getOwner()){
+							ownerOwnsFleet = ((Fleet)gameBoard.fields[checkedFleetNumb]).getOwner().getName().equals(getOwner().getName());
+						}
 						
 						if (ownerOwnsFleet == true)
 							ownersTotalFleets++;
@@ -81,7 +80,6 @@ public class Fleet extends Ownable {
 					else if (ownersTotalFleets == 4)
 						totalPay = RENT_4;
 					
-					System.out.println("totalPay er: "+totalPay);
 					int playerBalanceTemp;
 					playerBalanceTemp = player.getBalance();
 
@@ -95,17 +93,17 @@ public class Fleet extends Ownable {
 					else {
 						player.withdraw(totalPay);
 						payOwner(totalPay);
+						GUI.showMessage(player.getName()+", du er landet på "+owner.getName()+"'s felt, som totalt ejer "+ownersTotalFleets+" flåder og du skal derfor betale "+totalPay);
 					}
 
 					//Den nye balance for ejeren sættes her, da den ikke automatisk sættes efter endt runde.
 					GUI.setBalance(getOwner().getName(), getOwner().getBalance());
 					
-				}
+				} else
+					GUI.showMessage(player.getName()+", du er stoppet ved din egen flåde");
 				
 			}
 
 		}
 
 	}
-
-}

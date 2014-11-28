@@ -29,10 +29,10 @@ public class GameBoard {
 		fields[15] = new LaborCamp("The pit", 2500, 15, gameController);
 		fields[16] = new Tax("Goldmine", 5000, -1);
 		fields[17] = new Tax("Caravan", 500, 10);
-		fields[18] = new Fleet("Second Sail", 4000, 18, 1, this);
-		fields[19] = new Fleet("Sea Grover", 4000, 19, 2, this);
-		fields[20] = new Fleet("The buccaneers", 4000, 20, 3, this);
-		fields[21] = new Fleet("Privateer Armade", 4000, 21, 4, this);
+		fields[18] = new Fleet("Second Sail", 4000, 18, this);
+		fields[19] = new Fleet("Sea Grover", 4000, 19, this);
+		fields[20] = new Fleet("The buccaneers", 4000, 20, this);
+		fields[21] = new Fleet("Privateer Armade", 4000, 21, this);
 	}
 
 }

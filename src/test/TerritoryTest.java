@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import board.GameBoard;
-import board.Tax;
 import board.Territory;
 import spil.Player;
 import spil.GameController;
