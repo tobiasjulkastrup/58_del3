@@ -4,6 +4,8 @@ public class GameBoard {
 
 	public Field[] fields;
 	private final int TOTALFIELDS = 22;
+	
+	public FleetOwner fleetOwner;
 
 	public GameBoard() {
 		fields = new Field[TOTALFIELDS];
@@ -30,6 +32,8 @@ public class GameBoard {
 		fields[19] = new Fleet("Sea Grover", 4000, 19, 2);
 		fields[20] = new Fleet("The buccaneers", 4000, 20, 3);
 		fields[21] = new Fleet("Privateer Armade", 4000, 21, 4);
+		
+		fleetOwner = new FleetOwner(4);
 	}
 
 }
