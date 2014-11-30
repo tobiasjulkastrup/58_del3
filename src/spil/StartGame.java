@@ -12,11 +12,11 @@ public class StartGame {
 	private void go() {
 
 		// Opretter et iCO() opjekt og sætter sproget, sådan at beskeder kan
-		// hentes med:
-		// iCO.messages.getString("nøgleord")
+		// hentes med: iCO.messages.getString("nøgleord")
 		ICO iCO = new ICO();
 		iCO.setLang("da", "DK");
 
+		// Laver en ny GameController og starter spillet.
 		GameController gameController = new GameController();
 		gameController.newGame();
 	}

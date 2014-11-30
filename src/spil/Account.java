@@ -4,6 +4,7 @@ public class Account {
 
 	private int balance;
 
+	// Sætter kontoens balance
 	public void setAccount(int initial) {
 		balance = initial;
 	}
@@ -12,7 +13,7 @@ public class Account {
 		balance = balance + price;
 		return balance;
 	}
-
+	
 	public int withdraw(int price) {
 		if ((balance - price) < 0) { // withdraw value exceeds balance
 			balance = 0;
