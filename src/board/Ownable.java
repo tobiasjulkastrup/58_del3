@@ -45,7 +45,8 @@ public abstract class Ownable extends Field {
 		if (getOwner().getBalance() > 0) {
 			getOwner().deposit(owed);
 		} else
-			GUI.showMessage(ICO.messages.getString("asTheOwner")
+			GUI.showMessage(
+					ICO.messages.getString("asTheOwner")
 					+ getOwner().getName()
 					+ ICO.messages.getString("ownerBankruptMoneyToMinister"));
 

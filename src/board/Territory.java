@@ -31,6 +31,7 @@ public class Territory extends Ownable {
 				boolean playerBuyBool = false;
 
 				playerBuyString = GUI.getUserButtonPressed(
+						player.getName() +
 						ICO.messages.getString("theRoad") + getName()
 						+ ICO.messages.getString("roadForSale")
 						+ getPrice() + " "
@@ -80,7 +81,6 @@ public class Territory extends Ownable {
 				// Har spilleren nok, hæves hele beløbet
 				else {
 					player.withdraw(getRent());
-					payOwner(getRent());
 					GUI.showMessage(player.getName()
 							+ ICO.messages.getString("youLandedOn")
 							+ owner.getName()
@@ -88,6 +88,7 @@ public class Territory extends Ownable {
 							+ getName()
 							+ ICO.messages.getString("andHaveToPay")
 							+ getRent());
+					payOwner(getRent());
 				}
 
 				// Den nye balance for ejeren sættes her, da den ikke automatisk

@@ -33,7 +33,8 @@ public class Fleet extends Ownable {
 				boolean playerBuyBool = false;
 
 				playerBuyString = GUI.getUserButtonPressed(
-						ICO.messages.getString("theFleet") + getName()
+						player.getName()
+						+ ICO.messages.getString("theFleet") + getName()
 						+ ICO.messages.getString("fleetIsForSale")
 						+ getPrice() + " "
 						+ ICO.messages.getString("valuta")
@@ -110,7 +111,8 @@ public class Fleet extends Ownable {
 				else {
 					player.withdraw(totalPay);
 					payOwner(totalPay);
-					GUI.showMessage(player.getName()
+					GUI.showMessage(
+							player.getName()
 							+ ICO.messages.getString("youLandedOn")
 							+ owner.getName()
 							+ ICO.messages.getString("ownersFieldWhoOwns")

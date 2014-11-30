@@ -21,6 +21,11 @@ public class Tax extends Field {
 		if (taxRate < 0) {
 
 			player.withdraw(taxAmount);
+			GUI.showMessage(
+					ICO.messages.getString("payTaxAmount")
+					+ taxAmount
+					+ ")");
+			
 
 		} else {
 			int taxratetopay = player.getBalance() / 100 * 10;
@@ -28,25 +33,28 @@ public class Tax extends Field {
 			boolean taxRateBool = false;
 
 			taxRateChoiceString = GUI.getUserButtonPressed(
-					ICO.messages.getString("youHaveToPayTax"),
+					ICO.messages.getString(player.getName()+ "youHaveToPayTax"),
 					ICO.messages.getString("defaultRate") + taxAmount + ")",
 					ICO.messages.getString("10percent") + taxratetopay + ")");
 
-			taxRateBool = taxRateChoiceString.equals(ICO.messages
-					.getString("defaultRate") + taxAmount + ")");
+			taxRateBool = taxRateChoiceString.equals(
+					ICO.messages.getString("defaultRate") + taxAmount + ")");
 
 			if (true == taxRateBool) {
 				player.withdraw(taxAmount);
-				GUI.showMessage(ICO.messages.getString("yourTaxChoice")
+				GUI.showMessage(
+						player.getName()
+						+ ICO.messages.getString("yourTaxChoice")
 						+ ICO.messages.getString("defaultRate") + taxAmount
 						+ ")");
 			} else {
 				player.withdraw(taxratetopay);
-				GUI.showMessage(ICO.messages.getString("yourTaxChoice")
+				GUI.showMessage(
+						player.getName()
+						+ ICO.messages.getString("yourTaxChoice")
 						+ ICO.messages.getString("10percent") + taxratetopay
 						+ ")");
-			}
+			}	
 		}
-
 	}
 }
