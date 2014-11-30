@@ -16,6 +16,7 @@ public class TerritoryTest {
 	public void testLandOnField() {
 
 		// Preconditions
+		@SuppressWarnings("unused")
 		Territory Territory;
 
 		// Opretter gameboard

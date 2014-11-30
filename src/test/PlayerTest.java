@@ -1,8 +1,6 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
 import java.awt.Color;
 
 import org.junit.Test;
@@ -42,7 +40,6 @@ public class PlayerTest {
 		// precondtions
 		Player player;
 		player =  new Player();
-		Color playerColor;
 		// test
 		player.setPlayer(null, 0, Color.BLUE);
 		// postconditions		

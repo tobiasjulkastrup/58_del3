@@ -7,8 +7,7 @@ import org.junit.Test;
 import spil.GameController;
 import spil.ICO;
 import spil.Player;
-import board.Fleet;
-import board.GameBoard;
+import board.*;
 
 public class FleetTest {
 
@@ -16,7 +15,7 @@ public class FleetTest {
 	public void testLandOnField() {
 
 		// Preconditions
-		Fleet fleet;
+//		Fleet fleet;
 
 		// opretter gameboard
 		ICO iCO = new ICO();

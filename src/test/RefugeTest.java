@@ -1,13 +1,11 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
 import board.GameBoard;
 import board.Refuge;
-import board.Territory;
 import spil.ICO;
 import spil.Player;
 import spil.GameController;
@@ -19,7 +17,6 @@ public class RefugeTest {
 	public void testLandOnField() {
 		
 		//preconditions
-		Refuge Refuge;
 		ICO iCO = new ICO();
 		iCO.setLang("da", "DK");
 		GameController gameController = new GameController();

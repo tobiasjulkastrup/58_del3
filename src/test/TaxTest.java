@@ -2,8 +2,6 @@ package test;
 
 import static org.junit.Assert.*;
 
-import java.awt.Color;
-
 import org.junit.Test;
 
 import board.Tax;
@@ -16,6 +14,7 @@ public class TaxTest {
 	@Test
 	public void testLandOnField() {
 		//Preconditions
+		@SuppressWarnings("unused")
 		Tax tax;
 		//opretter gameboard
 		ICO iCO = new ICO();
@@ -23,7 +22,7 @@ public class TaxTest {
 		GameController gameController = new GameController();
 		GameBoard gameboard = new GameBoard(gameController);
 		// sætter tax
-		tax= new Tax(null, 500, 1);
+		tax = new Tax(null, 500, 1);
 		// opretter player
 		Player player;
 		player= new Player();
